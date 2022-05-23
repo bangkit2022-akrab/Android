@@ -1,7 +1,8 @@
-package com.C22PS320.Akrab
+package com.C22PS320.Akrab.ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.C22PS320.Akrab.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
