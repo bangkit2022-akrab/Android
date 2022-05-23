@@ -1,3 +1,31 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="copyright">\@Copyright 2022</string>
+    <string name="title_login_page">Welcome to the board!</string>
+    <string name="message_login_page">enter your data first</string>
+    <string name="login">Log in</string>
+    <string name="donthave">Dont have account yet?</string>
+    <string name="register">Register</string>
+    <string name="email">Email</string>
+    <string name="retry">Try Again</string>
+    <string name="alreadyhave">Already have account?</string>
+    <string name="selamat_datang">Welcome,</string>
+    <string name="user_id">User ID</string>
+    <string name="token">Token</string>
+    <string name="logout">Log Out</string>
+    <string name="camera_x">Camera</string>
+    <string name="gallery">Gallery</string>
+    <string name="upload">Upload</string>
+    <string name="description">Description</string>
+    <string name="title_activity_detail">DetailActivity</string>
+    <string name="not_permitted">Didnt get permission</string>
+    <string name="choose_pic">Choose Picture</string>
+    <string name="enter_image_first">Please input file first</string>
+    <string name="cant_open_camera">Failed launched camera</string>
+    <string name="cant_capture">Failed capture image</string>
+    <string name="field_cant_empty">field cant be null</string>
+    <string name="invalid_email">Email Invalid!</string>
+    <string name="six_chara_password">Password must more than 6 character!</string>
 </resources>
