@@ -25,9 +25,9 @@ class RegisterViewModel(private val pref: SettingPreferences): ViewModel() {
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> = _isLoading
 
-    fun saveUserSession(email: String, token: String) {
+    fun saveUserSession(name: String, email: String, token: String) {
         viewModelScope.launch {
-            pref.SaveUserSession(email, token)
+            pref.SaveUserSession(name, email, token)
         }
     }
 

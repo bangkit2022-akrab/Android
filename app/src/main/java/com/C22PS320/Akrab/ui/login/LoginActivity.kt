@@ -34,7 +34,10 @@ class LoginActivity : AppCompatActivity() {
 
         loginViewModel.login.observe(this) {
             if (it.meta?.message == "Success") {
-                it.data?.let { it1 -> loginViewModel.saveUserSession(it1.user?.email.toString(), it1.token.toString()) }
+                it.data?.let { it1 -> loginViewModel.saveUserSession(
+                    it1.user?.fullName.toString(),
+                    it1.user?.email.toString(),
+                    it1.token.toString()) }
                 userLogin()
             }
         }

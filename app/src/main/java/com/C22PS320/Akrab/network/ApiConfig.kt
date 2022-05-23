@@ -18,7 +18,7 @@ object ApiConfig {
             .addInterceptor(loggingInterceptor)
             .build()
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://crack-mariner-350403.et.r.appspot.com/api/")
+            .baseUrl("https://bangkit2022-akrab.et.r.appspot.com/api/")
             .addConverterFactory(GsonConverterFactory.create())
             .client(client)
             .build()

@@ -16,6 +16,7 @@ import com.C22PS320.Akrab.databinding.ActivityRegisterBinding
 import com.C22PS320.Akrab.preferences.SettingPreferences
 import com.C22PS320.Akrab.preferences.ViewModelFactory
 import com.C22PS320.Akrab.ui.login.LoginActivity
+import com.C22PS320.Akrab.ui.main.MainActivity
 import com.google.android.material.snackbar.Snackbar
 
 class RegisterActivity : AppCompatActivity() {
@@ -33,7 +34,10 @@ class RegisterActivity : AppCompatActivity() {
 
         registerViewModel.regist.observe(this) {
             if (it.meta?.message == "Success") {
-                it.data?.let { it1 -> registerViewModel.saveUserSession(it1.user?.email.toString(), it1.token.toString()) }
+                it.data?.let { it1 -> registerViewModel.saveUserSession(
+                    it1.user?.fullName.toString(),
+                    it1.user?.email.toString(),
+                    it1.token.toString()) }
                 userRegister()
             }
         }
@@ -81,7 +85,7 @@ class RegisterActivity : AppCompatActivity() {
     }
     private fun userRegister() {
             Handler(Looper.getMainLooper()).postDelayed({
-                startActivity(Intent(this, LoginActivity::class.java))
+                startActivity(Intent(this, MainActivity::class.java))
                 finish()
             },2500)
     }

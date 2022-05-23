@@ -11,22 +11,13 @@ data class AuthResponse(
 	val meta: Meta? = null
 )
 
-data class Meta(
-
-	@field:SerializedName("code")
-	val code: String? = null,
-
-	@field:SerializedName("message")
-	val message: String? = null,
-
-	@field:SerializedName("request_id")
-	val requestId: String? = null
-)
-
 data class User(
 
 	@field:SerializedName("password")
 	val password: String? = null,
+
+	@field:SerializedName("full_name")
+	val fullName: String? = null,
 
 	@field:SerializedName("salt")
 	val salt: String? = null,
@@ -51,4 +42,16 @@ data class Data(
 
 	@field:SerializedName("token")
 	val token: String? = null
+)
+
+data class Meta(
+
+	@field:SerializedName("code")
+	val code: String? = null,
+
+	@field:SerializedName("message")
+	val message: String? = null,
+
+	@field:SerializedName("request_id")
+	val requestId: String? = null
 )

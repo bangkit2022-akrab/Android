@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Akrab</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="login">Log in</string>
@@ -27,4 +27,5 @@
     <string name="six_chara_password">Password must more than 6 character!</string>
     <string name="create_your_account">Create Your Account</string>
     <string name="login_to_your_account">Login to your Account</string>
+    <string name="hello">Hello</string>
 </resources>
