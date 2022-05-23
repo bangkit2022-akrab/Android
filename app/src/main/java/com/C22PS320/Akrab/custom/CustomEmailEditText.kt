@@ -8,7 +8,7 @@ import android.view.View
 import androidx.appcompat.widget.AppCompatEditText
 import com.C22PS320.Akrab.R
 
-class customEmailEditText:AppCompatEditText {
+class CustomEmailEditText:AppCompatEditText {
 
     constructor(context: Context) : super(context)
 

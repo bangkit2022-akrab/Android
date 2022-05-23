@@ -2,9 +2,6 @@
     <string name="app_name">My Application</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
-    <string name="copyright">\@Copyright 2022</string>
-    <string name="title_login_page">Welcome to the board!</string>
-    <string name="message_login_page">enter your data first</string>
     <string name="login">Log in</string>
     <string name="donthave">Dont have account yet?</string>
     <string name="register">Register</string>
@@ -28,4 +25,6 @@
     <string name="field_cant_empty">field cant be null</string>
     <string name="invalid_email">Email Invalid!</string>
     <string name="six_chara_password">Password must more than 6 character!</string>
+    <string name="create_your_account">Create Your Account</string>
+    <string name="login_to_your_account">Login to your Account</string>
 </resources>

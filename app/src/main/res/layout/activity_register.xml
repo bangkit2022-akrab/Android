@@ -26,7 +26,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
-        android:text="@string/title_login_page"
+        android:text="@string/create_your_account"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -35,28 +35,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guidelineHorizontal" />
 
-    <TextView
-        android:id="@+id/messageTextView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:text="@string/message_login_page"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/userEditTextLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="@+id/messageTextView"
-        app:layout_constraintStart_toStartOf="@+id/messageTextView"
-        app:layout_constraintTop_toBottomOf="@+id/messageTextView"
+        app:layout_constraintEnd_toEndOf="@+id/titleTextView"
+        app:layout_constraintStart_toStartOf="@+id/titleTextView"
+        app:layout_constraintTop_toBottomOf="@+id/titleTextView"
         app:startIconDrawable="@drawable/ic_baseline_account_circle">
 
         <EditText
@@ -75,13 +62,13 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="@+id/messageTextView"
+        app:layout_constraintEnd_toEndOf="@+id/titleTextView"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/messageTextView"
+        app:layout_constraintStart_toStartOf="@+id/titleTextView"
         app:layout_constraintTop_toBottomOf="@+id/userEditTextLayout"
         app:startIconDrawable="@drawable/ic_baseline_email">
 
-        <com.C22PS320.Akrab.custom.customEmailEditText
+        <com.C22PS320.Akrab.custom.CustomEmailEditText
             android:id="@+id/registEmail"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:inputType="textEmailAddress"
@@ -98,9 +85,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="@+id/messageTextView"
+        app:layout_constraintEnd_toEndOf="@+id/titleTextView"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/messageTextView"
+        app:layout_constraintStart_toStartOf="@+id/titleTextView"
         app:layout_constraintTop_toBottomOf="@+id/emailEditTextLayout"
         app:startIconDrawable="@drawable/ic_baseline_lock">
 
@@ -115,7 +102,7 @@
             android:hint="@string/password" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.C22PS320.Akrab.custom.customButton
+    <com.C22PS320.Akrab.custom.CustomButton
         android:id="@+id/registbutton"
         android:layout_width="0dp"
         android:layout_height="64dp"

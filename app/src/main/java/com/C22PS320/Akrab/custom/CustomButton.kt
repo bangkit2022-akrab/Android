@@ -9,7 +9,7 @@ import androidx.appcompat.widget.AppCompatButton
 import androidx.core.content.ContextCompat
 import com.C22PS320.Akrab.R
 
-class customButton: AppCompatButton {
+class CustomButton: AppCompatButton {
 
 
         private lateinit var enabledBackground: Drawable

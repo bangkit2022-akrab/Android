@@ -22,7 +22,7 @@ class SplashScreenActivity : AppCompatActivity() {
 
         binding.progressBar.visibility = View.VISIBLE
         Handler(Looper.getMainLooper()).postDelayed({
-            binding.progressBar.visibility = View.INVISIBLE
+            binding.progressBar.visibility = View.GONE
             startActivity(Intent(this, LoginActivity::class.java))
             finish()
         },2500)
