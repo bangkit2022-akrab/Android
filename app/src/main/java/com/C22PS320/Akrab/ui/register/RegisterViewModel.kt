@@ -5,14 +5,17 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.C22PS320.Akrab.custom.Event
 import com.C22PS320.Akrab.network.ApiConfig
+import com.C22PS320.Akrab.preferences.SettingPreferences
 import com.C22PS320.Akrab.response.AuthResponse
+import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class RegisterViewModel: ViewModel() {
+class RegisterViewModel(private val pref: SettingPreferences): ViewModel() {
     private val _regist = MutableLiveData<AuthResponse>()
     val regist: LiveData<AuthResponse> = _regist
 
@@ -21,6 +24,12 @@ class RegisterViewModel: ViewModel() {
 
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> = _isLoading
+
+    fun saveUserSession(email: String, token: String) {
+        viewModelScope.launch {
+            pref.SaveUserSession(email, token)
+        }
+    }
 
     fun registerUser(username: String, email: String, password: String) {
         _isLoading.value = true

@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.C22PS320.Akrab.ui.login.LoginViewModel
+import com.C22PS320.Akrab.ui.register.RegisterViewModel
 
 class ViewModelFactory(private val pref: SettingPreferences,private val context: Context) : ViewModelProvider.NewInstanceFactory() {
 
@@ -15,6 +16,9 @@ class ViewModelFactory(private val pref: SettingPreferences,private val context:
 //            }
             modelClass.isAssignableFrom(LoginViewModel::class.java) -> {
                 LoginViewModel(pref) as T
+            }
+            modelClass.isAssignableFrom(RegisterViewModel::class.java) -> {
+                RegisterViewModel(pref) as T
             }
             else -> throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
         }
