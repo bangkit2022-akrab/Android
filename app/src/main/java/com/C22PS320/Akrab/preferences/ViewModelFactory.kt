@@ -3,6 +3,7 @@ package com.C22PS320.Akrab.preferences
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.C22PS320.Akrab.ui.kelas.ClassViewModel
 import com.C22PS320.Akrab.ui.login.LoginViewModel
 import com.C22PS320.Akrab.ui.main.MainViewModel
 import com.C22PS320.Akrab.ui.register.RegisterViewModel
@@ -18,6 +19,9 @@ class ViewModelFactory(private val pref: SettingPreferences,private val context:
 //            }
             modelClass.isAssignableFrom(MainViewModel::class.java) -> {
                 MainViewModel(pref) as T
+            }
+            modelClass.isAssignableFrom(ClassViewModel::class.java) -> {
+                ClassViewModel(pref) as T
             }
             modelClass.isAssignableFrom(SplashScreenViewModel::class.java) -> {
                 SplashScreenViewModel(pref) as T

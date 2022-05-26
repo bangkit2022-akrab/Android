@@ -29,4 +29,25 @@
         app:layout_constraintStart_toEndOf="@+id/hello"
         app:layout_constraintTop_toTopOf="@+id/hello" />
 
+    <ImageButton
+        android:id="@+id/btn_kelashuruf"
+        android:layout_width="235dp"
+        android:layout_height="207dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.26"
+        app:srcCompat="@drawable/akrab" />
+
+    <ImageButton
+        android:id="@+id/btn_kelasangka"
+        android:layout_width="235dp"
+        android:layout_height="218dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="@+id/btn_kelashuruf"
+        app:layout_constraintStart_toStartOf="@+id/btn_kelashuruf"
+        app:layout_constraintTop_toBottomOf="@+id/btn_kelashuruf"
+        tools:srcCompat="@tools:sample/avatars" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

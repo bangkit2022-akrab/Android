@@ -1,10 +1,9 @@
 package com.C22PS320.Akrab.network
 
-import com.C22PS320.Akrab.response.AuthResponse
+import com.C22PS320.Akrab.network.response.AuthResponse
+import com.C22PS320.Akrab.network.response.LevelResponse
 import retrofit2.Call
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface ApiService {
     @FormUrlEncoded
@@ -21,4 +20,11 @@ interface ApiService {
         @Field("email") email: String,
         @Field("password") password: String
     ): Call<AuthResponse>
+
+    @GET("level/{kelas}")
+    fun getLevel(
+        @Path("kelas") kelas: String,
+        @Query("token") token: String
+    ): Call<LevelResponse>
+
 }

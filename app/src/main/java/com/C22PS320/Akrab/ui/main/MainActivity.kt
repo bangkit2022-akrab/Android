@@ -1,6 +1,7 @@
 package com.C22PS320.Akrab.ui.main
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.datastore.core.DataStore
@@ -10,6 +11,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.C22PS320.Akrab.databinding.ActivityMainBinding
 import com.C22PS320.Akrab.preferences.SettingPreferences
 import com.C22PS320.Akrab.preferences.ViewModelFactory
+import com.C22PS320.Akrab.ui.kelas.ClassActivity
 
 
 class MainActivity : AppCompatActivity() {
@@ -26,6 +28,16 @@ class MainActivity : AppCompatActivity() {
         )
         mainViewModel.getName().observe(this) {
             binding.tvUsername.text = it
+        }
+        binding.btnKelashuruf.setOnClickListener {
+            val i = Intent(this, ClassActivity::class.java)
+            i.putExtra("class","huruf")
+            startActivity(i)
+        }
+        binding.btnKelasangka.setOnClickListener {
+            val i = Intent(this, ClassActivity::class.java)
+            i.putExtra("class","angka")
+            startActivity(i)
         }
 
     }

@@ -9,7 +9,7 @@ import androidx.lifecycle.viewModelScope
 import com.C22PS320.Akrab.custom.Event
 import com.C22PS320.Akrab.network.ApiConfig
 import com.C22PS320.Akrab.preferences.SettingPreferences
-import com.C22PS320.Akrab.response.AuthResponse
+import com.C22PS320.Akrab.network.response.AuthResponse
 import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback

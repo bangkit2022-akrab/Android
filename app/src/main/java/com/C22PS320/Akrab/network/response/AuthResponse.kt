@@ -1,4 +1,4 @@
-package com.C22PS320.Akrab.response
+package com.C22PS320.Akrab.network.response
 
 import com.google.gson.annotations.SerializedName
 
