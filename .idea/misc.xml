@@ -3,28 +3,23 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Iskandar Sholeh/Downloads/Android/app/src/main/res/drawable/ic_baseline_account_circle.xml" value="0.1" />
-        <entry key="..\:/Users/Iskandar Sholeh/Downloads/Android/app/src/main/res/drawable/ic_baseline_home.xml" value="0.1" />
-        <entry key="..\:/Users/Iskandar Sholeh/Downloads/Android/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.1" />
-        <entry key="..\:/Users/Iskandar Sholeh/Downloads/Android/app/src/main/res/drawable/ic_baseline_library_books_24.xml" value="0.1" />
-        <entry key="..\:/Users/Iskandar Sholeh/Downloads/Android/app/src/main/res/drawable/ic_baseline_subject_24.xml" value="0.1" />
-        <entry key="..\:/Users/Iskandar Sholeh/Downloads/Android/app/src/main/res/layout/activity_main.xml" value="0.23958333333333334" />
-        <entry key="..\:/Users/Iskandar Sholeh/Downloads/Android/app/src/main/res/layout/fragment_home.xml" value="0.23958333333333334" />
-        <entry key="..\:/Users/Iskandar Sholeh/Downloads/Android/app/src/main/res/layout/fragment_modul.xml" value="0.23958333333333334" />
-        <entry key="..\:/Users/Iskandar Sholeh/Downloads/Android/app/src/main/res/layout/fragment_news.xml" value="0.23958333333333334" />
-        <entry key="..\:/Users/Iskandar Sholeh/Downloads/Android/app/src/main/res/layout/fragment_profile.xml" value="0.23958333333333334" />
         <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/bg_button.xml" value="0.121" />
         <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/bg_button_disable.xml" value="0.121" />
         <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/custom_progressbar.xml" value="0.139" />
         <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/ic_baseline_email.xml" value="0.121" />
         <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/ic_baseline_lock.xml" value="0.121" />
+        <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/ic_baseline_navigate_before.xml" value="0.106" />
+        <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/ic_baseline_navigate_next.xml" value="0.106" />
         <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/ic_wave.xml" value="0.139" />
-        <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_class.xml" value="0.176" />
+        <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_class.xml" value="0.1" />
         <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_modul_quiz.xml" value="0.1" />
         <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_register.xml" value="0.176" />
         <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_splash_screen.xml" value="0.1" />
-        <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/layout/item_level.xml" value="0.264" />
+        <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/layout/fragment_home.xml" value="0.10555555555555556" />
+        <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/layout/fragment_module_learn.xml" value="0.1" />
+        <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/layout/item_level.xml" value="0.2" />
       </map>
     </option>
   </component>

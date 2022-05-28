@@ -1,6 +1,8 @@
 package com.C22PS320.Akrab.network.response
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
 data class AuthResponse(
 
@@ -43,7 +45,7 @@ data class Data(
 	@field:SerializedName("token")
 	val token: String? = null
 )
-
+@Parcelize
 data class Meta(
 
 	@field:SerializedName("code")
@@ -54,4 +56,4 @@ data class Meta(
 
 	@field:SerializedName("request_id")
 	val requestId: String? = null
-)
+): Parcelable

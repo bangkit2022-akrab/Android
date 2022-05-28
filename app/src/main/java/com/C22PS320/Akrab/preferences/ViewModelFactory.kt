@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.C22PS320.Akrab.ui.kelas.ClassViewModel
 import com.C22PS320.Akrab.ui.login.LoginViewModel
 import com.C22PS320.Akrab.ui.main.MainViewModel
+import com.C22PS320.Akrab.ui.modulquiz.ModulQuizViewModel
 import com.C22PS320.Akrab.ui.register.RegisterViewModel
 import com.C22PS320.Akrab.ui.splashscreen.SplashScreenViewModel
 
@@ -22,6 +23,9 @@ class ViewModelFactory(private val pref: SettingPreferences,private val context:
             }
             modelClass.isAssignableFrom(ClassViewModel::class.java) -> {
                 ClassViewModel(pref) as T
+            }
+            modelClass.isAssignableFrom(ModulQuizViewModel::class.java) -> {
+                ModulQuizViewModel(pref) as T
             }
             modelClass.isAssignableFrom(SplashScreenViewModel::class.java) -> {
                 SplashScreenViewModel(pref) as T

@@ -1,7 +1,6 @@
 package com.C22PS320.Akrab.ui.main
 
 import android.content.Context
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.datastore.core.DataStore
@@ -13,7 +12,10 @@ import com.C22PS320.Akrab.*
 import com.C22PS320.Akrab.databinding.ActivityMainBinding
 import com.C22PS320.Akrab.preferences.SettingPreferences
 import com.C22PS320.Akrab.preferences.ViewModelFactory
-import com.C22PS320.Akrab.ui.kelas.ClassActivity
+import com.C22PS320.Akrab.ui.main.home.HomeFragment
+import com.C22PS320.Akrab.ui.main.modul.ModulFragment
+import com.C22PS320.Akrab.ui.main.news.NewsFragment
+import com.C22PS320.Akrab.ui.main.profile.ProfileFragment
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation
 
 
@@ -23,26 +25,18 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-//        supportActionBar?.hide()
 
-//        val pref = SettingPreferences.getInstance(dataStore)
-//        val mainViewModel = ViewModelProvider(this, ViewModelFactory(pref,this)).get(
-//            MainViewModel::class.java
-//        )
-//        mainViewModel.getName().observe(this) {
-//            binding.tvUsername.text = it
-//        }
-//        binding.btnKelashuruf.setOnClickListener {
-//            val i = Intent(this, ClassActivity::class.java)
-//            i.putExtra("class","huruf")
-//            startActivity(i)
-//        }
-//        binding.btnKelasangka.setOnClickListener {
-//            val i = Intent(this, ClassActivity::class.java)
-//            i.putExtra("class","angka")
-//            startActivity(i)
-//        }
-        addFragment(HomeFragment.newInstance())
+        val pref = SettingPreferences.getInstance(dataStore)
+        val mainViewModel = ViewModelProvider(this, ViewModelFactory(pref,this)).get(
+            MainViewModel::class.java
+        )
+        mainViewModel.getName().observe(this) {
+            val fragment = HomeFragment.newInstance()
+            val mBundle = Bundle()
+            mBundle.putString(HomeFragment.EXTRA_NAME, it)
+            fragment.arguments = mBundle
+            replaceFragment(fragment)
+        }
         binding.bottomNavigation.show(0)
         binding.bottomNavigation.add(MeowBottomNavigation.Model(0, R.drawable.ic_baseline_home))
         binding.bottomNavigation.add(MeowBottomNavigation.Model(1, R.drawable.ic_baseline_library_books_24))
@@ -52,7 +46,13 @@ class MainActivity : AppCompatActivity() {
         binding.bottomNavigation.setOnClickMenuListener {
             when(it.id){
                 0 -> {
-                    replaceFragment(HomeFragment.newInstance())
+                    mainViewModel.getName().observe(this) {
+                        val fragment = HomeFragment.newInstance()
+                        val mBundle = Bundle()
+                        mBundle.putString(HomeFragment.EXTRA_NAME, it)
+                        fragment.arguments = mBundle
+                        replaceFragment(fragment)
+                    }
                 }
                 1 -> {
                     replaceFragment(ModulFragment.newInstance())
@@ -70,14 +70,9 @@ class MainActivity : AppCompatActivity() {
 
     }
     private fun replaceFragment(fragment: Fragment){
+
         val fragmentTransition = supportFragmentManager.beginTransaction()
         fragmentTransition.replace(R.id.FragmentContainer,fragment).addToBackStack(Fragment::class.java.simpleName).commit()
-
-    }
-    private fun addFragment(fragment: Fragment){
-        val fragmentTransition = supportFragmentManager.beginTransaction()
-        val commit = fragmentTransition.replace(R.id.FragmentContainer, fragment)
-            .addToBackStack(Fragment::class.java.simpleName).commit()
 
     }
     companion object {

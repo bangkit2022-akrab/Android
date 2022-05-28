@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
+            android:name=".ui.modulquiz.ModulQuizActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.kelas.ClassActivity"
             android:exported="false" />
         <activity

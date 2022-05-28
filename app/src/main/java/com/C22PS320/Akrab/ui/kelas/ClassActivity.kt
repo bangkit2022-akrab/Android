@@ -1,8 +1,10 @@
 package com.C22PS320.Akrab.ui.kelas
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
@@ -14,6 +16,7 @@ import com.C22PS320.Akrab.databinding.ActivityClassBinding
 import com.C22PS320.Akrab.network.response.LevelResponse
 import com.C22PS320.Akrab.preferences.SettingPreferences
 import com.C22PS320.Akrab.preferences.ViewModelFactory
+import com.C22PS320.Akrab.ui.modulquiz.ModulQuizActivity
 
 class ClassActivity : AppCompatActivity() {
     private lateinit var binding: ActivityClassBinding
@@ -28,10 +31,13 @@ class ClassActivity : AppCompatActivity() {
             ClassViewModel::class.java
         )
         classViewModel.getToken().observe(this) {
-            classViewModel.getUsersData(kelas, it)
+            classViewModel.getLevelClass(kelas, it)
         }
-        classViewModel.users.observe(this) {
+        classViewModel.levelClass.observe(this) {
             setReviewData(it)
+        }
+        classViewModel.isLoading.observe(this) {
+            showLoading(it)
         }
         val layoutManager = LinearLayoutManager(this)
         binding.rvUsers.layoutManager = layoutManager
@@ -41,12 +47,21 @@ class ClassActivity : AppCompatActivity() {
     private fun setReviewData(UsersData: LevelResponse) {
         val adapter = LevelAdapter(UsersData.data)
         binding.rvUsers.adapter = adapter
-//        adapter.setOnItemClickCallback(object : UsersAdapter.OnItemClickCallback {
-//            override fun onItemClicked(data: UsersResponseItem) {
-//                data.login?.let { showSelectedHero(it) }
-//            }
-//        })
+        adapter.setOnItemClickCallback(object : LevelAdapter.OnItemClickCallback {
+            override fun onItemClicked(data: String) {
+               goToModule(data)
+            }
+        })
     }
+    private fun goToModule(data: String) {
+        val i = Intent(this, ModulQuizActivity::class.java)
+        i.putExtra("level",data)
+        startActivity(i)
+    }
+    private fun showLoading(isLoading: Boolean) {
+        binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
+    }
+
     companion object {
         private var KELAS = "class"
         private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
