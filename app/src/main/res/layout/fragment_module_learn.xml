@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.modulquiz.ModuleLearnFragment">
+    tools:context=".ui.modulquiz.learnmodule.ModuleLearnFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -25,18 +25,18 @@
             android:layout_width="359dp"
             android:layout_height="49dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="20dp"
             android:text="TextView"
             android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.277"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/img_handModule" />
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="360dp"
-            android:layout_height="224dp"
+            android:layout_width="356dp"
+            android:layout_height="282dp"
             android:layout_marginTop="16dp"
             android:text="TextView"
             app:layout_constraintEnd_toEndOf="parent"
@@ -48,7 +48,7 @@
             android:id="@+id/imageButton"
             android:layout_width="56dp"
             android:layout_height="56dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="10dp"
             android:backgroundTint="#FFFFFF"
             android:src="@drawable/ic_baseline_navigate_next"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -60,7 +60,7 @@
             android:id="@+id/imageButton2"
             android:layout_width="56dp"
             android:layout_height="56dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="10dp"
             android:backgroundTint="#FFFFFF"
             android:contentDescription="Before"
             android:src="@drawable/ic_baseline_navigate_before"
@@ -68,6 +68,18 @@
             app:layout_constraintStart_toStartOf="@+id/textView2"
             app:layout_constraintTop_toBottomOf="@+id/textView2"
             app:layout_constraintVertical_bias="0.32999998" />
+
+        <Button
+            android:id="@+id/goToQuiz"
+            android:layout_width="202dp"
+            android:layout_height="49dp"
+            android:layout_marginTop="10dp"
+            android:text="Start Quiz"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/textView2"
+            app:layout_constraintHorizontal_bias="0.19"
+            app:layout_constraintStart_toEndOf="@+id/imageButton2"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

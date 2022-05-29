@@ -1,9 +1,14 @@
 package com.C22PS320.Akrab.ui.modulquiz
 
+import android.Manifest
 import android.content.Context
+import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
@@ -12,14 +17,45 @@ import com.C22PS320.Akrab.R
 import com.C22PS320.Akrab.databinding.ActivityModulQuizBinding
 import com.C22PS320.Akrab.preferences.SettingPreferences
 import com.C22PS320.Akrab.preferences.ViewModelFactory
+import com.C22PS320.Akrab.ui.modulquiz.learnmodule.ModuleLearnFragment
 
 class ModulQuizActivity : AppCompatActivity() {
     private lateinit var binding: ActivityModulQuizBinding
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode == REQUEST_CODE_PERMISSIONS) {
+            if (!allPermissionsGranted()) {
+                Toast.makeText(
+                    this,
+                    "Tidak mendapatkan permission.",
+                    Toast.LENGTH_SHORT
+                ).show()
+                finish()
+            }
+        }
+    }
+    private fun allPermissionsGranted() = REQUIRED_PERMISSIONS.all {
+        ContextCompat.checkSelfPermission(baseContext, it) == PackageManager.PERMISSION_GRANTED
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityModulQuizBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         supportActionBar?.hide()
+
+        if (!allPermissionsGranted()) {
+            ActivityCompat.requestPermissions(
+                this,
+                REQUIRED_PERMISSIONS,
+                REQUEST_CODE_PERMISSIONS
+            )
+        }
         val level = intent.getStringExtra(level)
         val pref = SettingPreferences.getInstance(dataStore)
         val modulQuizViewModel = ViewModelProvider(this, ViewModelFactory(pref,this)).get(
@@ -56,5 +92,8 @@ class ModulQuizActivity : AppCompatActivity() {
         private var level = "level"
         private val INIT = 0
         private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
+
+        private val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.CAMERA)
+        private const val REQUEST_CODE_PERMISSIONS = 10
     }
 }

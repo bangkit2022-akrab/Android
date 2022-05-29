@@ -1,4 +1,4 @@
-package com.C22PS320.Akrab.ui.modulquiz
+package com.C22PS320.Akrab.ui.modulquiz.learnmodule
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import com.C22PS320.Akrab.R
 import com.C22PS320.Akrab.databinding.FragmentModuleLearnBinding
 import com.C22PS320.Akrab.network.response.ModuleQuizResponse
+import com.C22PS320.Akrab.ui.modulquiz.learnquiz.QuizLearnFragment
 import com.bumptech.glide.Glide
 
 class ModuleLearnFragment : Fragment() {
@@ -39,6 +40,7 @@ class ModuleLearnFragment : Fragment() {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.goToQuiz.visibility = View.GONE
         val data = arguments?.getParcelable<ModuleQuizResponse>(DATAMODULEQUIZ)
         val pvt = arguments?.getInt(PIVOT)
         val mx = arguments?.getInt(MAX)
@@ -52,12 +54,29 @@ class ModuleLearnFragment : Fragment() {
             binding.imageButton2.visibility = View.GONE
         }else if (pvt==mx!!-1){
             binding.imageButton.visibility = View.GONE
+            binding.goToQuiz.visibility = View.VISIBLE
         }
         binding.imageButton.setOnClickListener {
             changeModule(data,pvt,mx,true)
         }
         binding.imageButton2.setOnClickListener {
             changeModule(data,pvt,mx,false)
+        }
+        binding.goToQuiz.setOnClickListener {
+            val mFragmentManager = parentFragmentManager
+            val mHomeFragment = QuizLearnFragment.newInstance()
+            val mBundle = Bundle()
+            mBundle.putParcelable(DATAMODULEQUIZ, data)
+            mBundle.putInt(PIVOT, 0)
+            mBundle.putInt(MAX, data?.data?.quiz?.size!!-1)
+            mHomeFragment.arguments = mBundle
+            val fragment = mFragmentManager.findFragmentByTag(ModuleLearnFragment::class.java.simpleName)
+            if (fragment is ModuleLearnFragment) {
+                mFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.frame_container, mHomeFragment, ModuleLearnFragment::class.java.simpleName)
+                    .commit()
+            }
         }
     }
     private fun changeModule(data: ModuleQuizResponse?, pivot: Int?, max: Int?, check: Boolean) {
