@@ -33,8 +33,9 @@ class NewsFragment : Fragment() {
     }
     override fun onViewCreated(itemView: View, savedInstanceState: Bundle?) {
         super.onViewCreated(itemView, savedInstanceState)
-        (activity as AppCompatActivity).supportActionBar?.show()
-        (activity as AppCompatActivity).supportActionBar?.title = "News"
+        (activity as AppCompatActivity).supportActionBar?.hide()
+//        (activity as AppCompatActivity).supportActionBar?.show()
+//        (activity as AppCompatActivity).supportActionBar?.title = "News"
 
     }
 }

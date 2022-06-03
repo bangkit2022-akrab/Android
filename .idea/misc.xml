@@ -3,6 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Iskandar Sholeh/Downloads/hey/Android/app/src/main/res/drawable/corner.xml" value="0.332" />
+        <entry key="..\:/Users/Iskandar Sholeh/Downloads/hey/Android/app/src/main/res/drawable/rounder.xml" value="0.332" />
+        <entry key="..\:/Users/Iskandar Sholeh/Downloads/hey/Android/app/src/main/res/font/font.xml" value="0.396875" />
+        <entry key="..\:/Users/Iskandar Sholeh/Downloads/hey/Android/app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="..\:/Users/Iskandar Sholeh/Downloads/hey/Android/app/src/main/res/layout/item_level.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/bg_button.xml" value="0.121" />
         <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/bg_button_disable.xml" value="0.121" />
         <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/custom_progressbar.xml" value="0.139" />

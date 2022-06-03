@@ -6,52 +6,92 @@
     android:layout_height="match_parent"
     tools:context=".ui.main.home.HomeFragment">
 
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-            <TextView
-                android:id="@+id/hello"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:fontFamily="sans-serif-medium"
-                android:text="@string/hello"
-                android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.11"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/tv_username"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:fontFamily="sans-serif-medium"
-                android:textSize="18sp"
-                app:layout_constraintStart_toEndOf="@+id/hello"
-                app:layout_constraintTop_toTopOf="@+id/hello" />
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="167dp"
+            android:src="@drawable/header4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageButton
-                android:id="@+id/btn_kelashuruf"
-                android:layout_width="235dp"
-                android:layout_height="207dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.26"
-                app:srcCompat="@drawable/akrab" />
 
-            <ImageButton
-                android:id="@+id/btn_kelasangka"
-                android:layout_width="235dp"
-                android:layout_height="218dp"
-                android:layout_marginTop="32dp"
-                app:layout_constraintEnd_toEndOf="@+id/btn_kelashuruf"
-                app:layout_constraintStart_toStartOf="@+id/btn_kelashuruf"
-                app:layout_constraintTop_toBottomOf="@+id/btn_kelashuruf"
-                tools:srcCompat="@tools:sample/avatars" />
+        <TextView
+            android:id="@+id/hello"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:fontFamily="@font/poppins_bolditalic"
+            android:text="@string/hello"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.059"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/tv_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bolditalic"
+            android:text="@string/hello"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="@+id/hello"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/hello"
+            app:layout_constraintTop_toBottomOf="@+id/hello" />
+
+        <TextView
+            android:id="@+id/chosee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="156dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="@string/choose"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.059"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+
+            android:id="@+id/btn_kelashuruf"
+            android:layout_width="150dp"
+            android:layout_height="136dp"
+            android:background="@drawable/corner"
+            android:src="@drawable/ic_baseline_home"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.111"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/chosee"
+            app:layout_constraintVertical_bias="0.094" />
+
+        <ImageButton
+            android:id="@+id/btn_kelasangka"
+            android:layout_width="150dp"
+            android:layout_height="136dp"
+            android:background="@drawable/corner"
+            android:src="@drawable/ic_baseline_home"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.488"
+            app:layout_constraintStart_toEndOf="@+id/btn_kelashuruf"
+            app:layout_constraintTop_toBottomOf="@+id/chosee"
+            app:layout_constraintVertical_bias="0.094" />
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

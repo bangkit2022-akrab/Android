@@ -35,8 +35,9 @@ class ProfileFragment : Fragment() {
     }
     override fun onViewCreated(itemView: View, savedInstanceState: Bundle?) {
         super.onViewCreated(itemView, savedInstanceState)
-        (activity as AppCompatActivity).supportActionBar?.show()
-        (activity as AppCompatActivity).supportActionBar?.title = "Profile"
+        (activity as AppCompatActivity).supportActionBar?.hide()
+//        (activity as AppCompatActivity).supportActionBar?.show()
+//        (activity as AppCompatActivity).supportActionBar?.title = "Profile"
 
     }
 }
