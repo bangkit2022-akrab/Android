@@ -49,7 +49,6 @@ class LoginViewModel(private val pref: SettingPreferences): ViewModel() {
             }
             override fun onFailure(call: Call<AuthResponse>, t: Throwable) {
                 _isLoading.value = false
-                Log.e(ContentValues.TAG, "onFailure: ${t.message}")
             }
         })
     }

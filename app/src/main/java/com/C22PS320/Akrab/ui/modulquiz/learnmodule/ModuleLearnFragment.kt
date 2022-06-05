@@ -40,7 +40,7 @@ class ModuleLearnFragment : Fragment() {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.goToQuiz.visibility = View.GONE
+        binding.btnGoToQuiz.visibility = View.GONE
         val data = arguments?.getParcelable<ModuleQuizResponse>(DATAMODULEQUIZ)
         val pvt = arguments?.getInt(PIVOT)
         val mx = arguments?.getInt(MAX)
@@ -51,18 +51,18 @@ class ModuleLearnFragment : Fragment() {
         binding.textView.text = now?.materi
         binding.textView2.text = now?.description
         if (pvt==0){
-            binding.imageButton2.visibility = View.GONE
+            binding.btnBeforeModule.visibility = View.GONE
         }else if (pvt==mx!!-1){
-            binding.imageButton.visibility = View.GONE
-            binding.goToQuiz.visibility = View.VISIBLE
+            binding.btnNextModule.visibility = View.GONE
+            binding.btnGoToQuiz.visibility = View.VISIBLE
         }
-        binding.imageButton.setOnClickListener {
+        binding.btnNextModule.setOnClickListener {
             changeModule(data,pvt,mx,true)
         }
-        binding.imageButton2.setOnClickListener {
+        binding.btnBeforeModule.setOnClickListener {
             changeModule(data,pvt,mx,false)
         }
-        binding.goToQuiz.setOnClickListener {
+        binding.btnGoToQuiz.setOnClickListener {
             val mFragmentManager = parentFragmentManager
             val mHomeFragment = QuizLearnFragment.newInstance()
             val mBundle = Bundle()

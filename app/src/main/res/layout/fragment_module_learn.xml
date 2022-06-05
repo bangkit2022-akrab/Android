@@ -8,12 +8,12 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <ImageView
             android:id="@+id/img_handModule"
-            android:layout_width="412dp"
-            android:layout_height="267dp"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
             android:src="@drawable/akrab"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -22,64 +22,68 @@
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="359dp"
-            android:layout_height="49dp"
-            android:layout_marginStart="16dp"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="TextView"
+            android:fontFamily="sans-serif-condensed"
             android:textAlignment="center"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.277"
-            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="32dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/img_handModule"
+            app:layout_constraintStart_toStartOf="@id/img_handModule"
             app:layout_constraintTop_toBottomOf="@+id/img_handModule" />
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="356dp"
-            android:layout_height="282dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="TextView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            android:fontFamily="sans-serif-light"
+            android:textSize="16sp"
+            android:textStyle="italic"
+            app:layout_constraintEnd_toEndOf="@id/textView"
             app:layout_constraintStart_toStartOf="@+id/textView"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
 
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/btn_NextModule"
             android:layout_width="56dp"
             android:layout_height="56dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
             android:backgroundTint="#FFFFFF"
             android:src="@drawable/ic_baseline_navigate_next"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/textView2"
             app:layout_constraintTop_toBottomOf="@+id/textView2"
-            app:layout_constraintVertical_bias="0.32999998" />
+            app:layout_constraintVertical_bias="1.0" />
 
         <ImageButton
-            android:id="@+id/imageButton2"
+            android:id="@+id/btn_beforeModule"
             android:layout_width="56dp"
             android:layout_height="56dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
             android:backgroundTint="#FFFFFF"
             android:contentDescription="Before"
             android:src="@drawable/ic_baseline_navigate_before"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/textView2"
             app:layout_constraintTop_toBottomOf="@+id/textView2"
-            app:layout_constraintVertical_bias="0.32999998" />
+            app:layout_constraintVertical_bias="1.0" />
 
         <Button
-            android:id="@+id/goToQuiz"
+            android:id="@+id/btn_GoToQuiz"
             android:layout_width="202dp"
             android:layout_height="49dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
             android:text="Start Quiz"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/textView2"
-            app:layout_constraintHorizontal_bias="0.19"
-            app:layout_constraintStart_toEndOf="@+id/imageButton2"
-            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+            app:layout_constraintStart_toStartOf="@+id/textView2"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            app:layout_constraintVertical_bias="1.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
