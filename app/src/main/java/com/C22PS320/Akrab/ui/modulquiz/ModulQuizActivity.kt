@@ -18,6 +18,7 @@ import com.C22PS320.Akrab.databinding.ActivityModulQuizBinding
 import com.C22PS320.Akrab.preferences.SettingPreferences
 import com.C22PS320.Akrab.preferences.ViewModelFactory
 import com.C22PS320.Akrab.ui.modulquiz.learnmodule.ModuleLearnFragment
+import com.C22PS320.Akrab.ui.modulquiz.learnquiz.QuizLearnFragment
 
 class ModulQuizActivity : AppCompatActivity() {
     private lateinit var binding: ActivityModulQuizBinding
@@ -61,27 +62,34 @@ class ModulQuizActivity : AppCompatActivity() {
         val modulQuizViewModel = ViewModelProvider(this, ViewModelFactory(pref,this)).get(
             ModulQuizViewModel::class.java
         )
-        modulQuizViewModel.getToken().observe(this) {
-            modulQuizViewModel.getModuleQuiz(level, it)
-        }
-        modulQuizViewModel.moduleQuiz.observe(this) {
-            val mFragmentManager = supportFragmentManager
-            val mHomeFragment = ModuleLearnFragment.newInstance()
-            val mBundle = Bundle()
-            mBundle.putParcelable(ModuleLearnFragment.DATAMODULEQUIZ, it)
-            mBundle.putInt(ModuleLearnFragment.PIVOT, INIT)
-            it.data?.modul?.let { it1 -> mBundle.putInt(ModuleLearnFragment.MAX, it1?.size) }
-            mHomeFragment.arguments = mBundle
-            val fragment = mFragmentManager.findFragmentByTag(ModuleLearnFragment::class.java.simpleName)
-            if (fragment !is ModuleLearnFragment) {
-                mFragmentManager
-                    .beginTransaction()
-                    .add(R.id.frame_container, mHomeFragment, ModuleLearnFragment::class.java.simpleName)
-                    .commit()
+        if (savedInstanceState == null) {
+            modulQuizViewModel.getToken().observe(this) {
+                modulQuizViewModel.getModuleQuiz(level, it)
             }
-        }
-        modulQuizViewModel.isLoading.observe(this) {
-            showLoading(it)
+            modulQuizViewModel.moduleQuiz.observe(this) {
+                val mFragmentManager = supportFragmentManager
+                val mHomeFragment = ModuleLearnFragment.newInstance()
+                val mBundle = Bundle()
+                mBundle.putParcelable(ModuleLearnFragment.DATAMODULEQUIZ, it)
+                mBundle.putInt(ModuleLearnFragment.PIVOT, INIT)
+                it.data?.modul?.let { it1 -> mBundle.putInt(ModuleLearnFragment.MAX, it1?.size) }
+                mHomeFragment.arguments = mBundle
+                val fragment =
+                    mFragmentManager.findFragmentByTag(ModuleLearnFragment::class.java.simpleName)
+                if (fragment !is QuizLearnFragment) {
+                    mFragmentManager
+                        .beginTransaction()
+                        .add(
+                            R.id.frame_container,
+                            mHomeFragment,
+                            ModuleLearnFragment::class.java.simpleName
+                        )
+                        .commit()
+                }
+            }
+            modulQuizViewModel.isLoading.observe(this) {
+                showLoading(it)
+            }
         }
     }
 

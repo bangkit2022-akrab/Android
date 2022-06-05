@@ -23,7 +23,6 @@ class LevelAdapter(private val listUser: List<DataItem?>?) : RecyclerView.Adapte
 
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
         viewHolder.itemView.setBackgroundColor(Color.LTGRAY)
-        viewHolder.tvItemName.text = listUser?.get(position)?.level
         Glide.with(viewHolder.itemView.context)
             .load("${listUser?.get(position)?.imageLevel}")
             .into(viewHolder.imgItemPhoto)
@@ -39,7 +38,6 @@ class LevelAdapter(private val listUser: List<DataItem?>?) : RecyclerView.Adapte
     }
     override fun getItemCount() = listUser?.size ?: 0
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val tvItemName: TextView = view.findViewById(R.id.tvItemName)
         val imgItemPhoto: ImageView = view.findViewById(R.id.imgItemPhoto)
     }
 }

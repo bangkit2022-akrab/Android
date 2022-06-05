@@ -8,68 +8,51 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="359dp"
-            android:layout_height="49dp"
-            android:layout_marginStart="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:text="TextView"
+            android:fontFamily="sans-serif-condensed"
             android:textAlignment="center"
+            android:textSize="32dp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/btn_NextQuiz"
             android:layout_width="56dp"
             android:layout_height="56dp"
-            android:layout_marginTop="80dp"
-            android:layout_marginEnd="3dp"
             android:backgroundTint="#FFFFFF"
             android:src="@drawable/ic_baseline_navigate_next"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_PhotoQuiz"
             app:layout_constraintEnd_toEndOf="@+id/imageView2"
-            app:layout_constraintTop_toBottomOf="@+id/imageView2"
-            app:layout_constraintVertical_bias="1.0" />
-
-        <ImageButton
-            android:id="@+id/imageButton2"
-            android:layout_width="56dp"
-            android:layout_height="56dp"
-            android:layout_marginTop="80dp"
-            android:backgroundTint="#FFFFFF"
-            android:contentDescription="Before"
-            android:src="@drawable/ic_baseline_navigate_before"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/imageView2"
-            app:layout_constraintTop_toBottomOf="@+id/imageView2"
-            app:layout_constraintVertical_bias="0.32999998" />
-
-        <Button
-            android:id="@+id/goToQuiz"
-            android:layout_width="202dp"
-            android:layout_height="49dp"
-            android:layout_marginTop="80dp"
-            android:text="Show Your Sign"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/imageView2"
-            app:layout_constraintStart_toStartOf="@+id/imageView2"
-            app:layout_constraintTop_toBottomOf="@+id/imageView2"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintTop_toTopOf="@+id/btn_PhotoQuiz" />
 
         <ImageView
             android:id="@+id/imageView2"
-            android:layout_width="356dp"
-            android:layout_height="420dp"
-            android:layout_marginTop="56dp"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_marginTop="150dp"
             app:layout_constraintEnd_toEndOf="@+id/textView"
-            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="@+id/textView"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
-            tools:src="@tools:sample/backgrounds/scenic" />
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <ImageButton
+            android:id="@+id/btn_PhotoQuiz"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginBottom="24dp"
+            android:backgroundTint="#FFFFFF"
+            android:src="@drawable/ic_baseline_front_hand"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/imageView2"
+            app:layout_constraintStart_toStartOf="@+id/imageView2"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2"
+            app:layout_constraintVertical_bias="1.0" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
