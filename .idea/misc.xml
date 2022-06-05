@@ -3,14 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Iskandar Sholeh/Downloads/hey/Android/app/src/main/res/drawable/corner.xml" value="0.332" />
-        <entry key="..\:/Users/Iskandar Sholeh/Downloads/hey/Android/app/src/main/res/drawable/rounder.xml" value="0.332" />
-        <entry key="..\:/Users/Iskandar Sholeh/Downloads/hey/Android/app/src/main/res/font/font.xml" value="0.396875" />
-        <entry key="..\:/Users/Iskandar Sholeh/Downloads/hey/Android/app/src/main/res/layout/fragment_home.xml" value="0.25" />
-        <entry key="..\:/Users/Iskandar Sholeh/Downloads/hey/Android/app/src/main/res/layout/item_level.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/bg_button.xml" value="0.121" />
         <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/bg_button_disable.xml" value="0.121" />
         <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/custom_progressbar.xml" value="0.139" />
+        <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/ic_baseline_close.xml" value="0.1605" />
         <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/ic_baseline_email.xml" value="0.121" />
         <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/ic_baseline_front_hand.xml" value="0.164" />
         <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/ic_baseline_lock.xml" value="0.121" />
@@ -19,7 +15,7 @@
         <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/ic_capture.xml" value="0.106" />
         <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/ic_switch_camera.xml" value="0.106" />
         <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/ic_wave.xml" value="0.139" />
-        <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_camera.xml" value="0.12" />
+        <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_camera.xml" value="0.2" />
         <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_class.xml" value="0.1" />
         <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_main.xml" value="0.1" />
@@ -28,10 +24,13 @@
         <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_splash_screen.xml" value="0.1" />
         <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/layout/finish_layout_dialog.xml" value="0.152" />
         <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/layout/fragment_home.xml" value="0.10555555555555556" />
+        <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/layout/fragment_modul.xml" value="0.10729166666666666" />
         <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/layout/fragment_module_learn.xml" value="0.264" />
         <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/layout/fragment_news.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/layout/fragment_quiz_learn.xml" value="0.16842105263157894" />
         <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/layout/item_level.xml" value="0.2" />
+        <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/layout/item_module.xml" value="0.24635416666666668" />
+        <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/layout/module_layout_dialog.xml" value="0.152" />
         <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/layout/true_layout_dialog.xml" value="0.1" />
         <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/layout/wrong_layout_dialog.xml" value="0.136" />
       </map>

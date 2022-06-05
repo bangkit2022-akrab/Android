@@ -3,6 +3,7 @@ package com.C22PS320.Akrab.network
 import com.C22PS320.Akrab.network.response.AuthResponse
 import com.C22PS320.Akrab.network.response.LevelResponse
 import com.C22PS320.Akrab.network.response.ModuleQuizResponse
+import com.C22PS320.Akrab.network.response.ModuleResponse
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -33,5 +34,10 @@ interface ApiService {
         @Path("level") level: String,
         @Query("token") token: String
     ): Call<ModuleQuizResponse>
+
+    @GET("modul")
+    fun getModule(
+        @Query("token") token: String
+    ): Call<ModuleResponse>
 
 }

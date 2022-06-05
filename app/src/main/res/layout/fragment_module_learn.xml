@@ -11,7 +11,7 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/img_handModule"
+            android:id="@+id/img_HandModule"
             android:layout_width="300dp"
             android:layout_height="300dp"
             android:src="@drawable/akrab"
@@ -29,9 +29,9 @@
             android:textAlignment="center"
             android:textSize="32dp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@id/img_handModule"
-            app:layout_constraintStart_toStartOf="@id/img_handModule"
-            app:layout_constraintTop_toBottomOf="@+id/img_handModule" />
+            app:layout_constraintEnd_toEndOf="@id/img_HandModule"
+            app:layout_constraintStart_toStartOf="@id/img_HandModule"
+            app:layout_constraintTop_toBottomOf="@+id/img_HandModule" />
 
         <TextView
             android:id="@+id/textView2"
