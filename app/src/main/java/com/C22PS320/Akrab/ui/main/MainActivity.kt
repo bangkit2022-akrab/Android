@@ -77,7 +77,14 @@ class MainActivity : AppCompatActivity() {
                     replaceFragment(NewsFragment.newInstance())
                 }
                 3 -> {
-                    replaceFragment(ProfileFragment.newInstance())
+                    mainViewModel.getName().observe(this) {
+                        val fragment = ProfileFragment.newInstance()
+                        val mBundle = Bundle()
+                        mBundle.putString(ProfileFragment.EXTRA_NAME, it)
+                        fragment.arguments = mBundle
+                        replaceFragment(fragment)
+                    }
+
                 }else ->{
                 replaceFragment(HomeFragment.newInstance())
             }
