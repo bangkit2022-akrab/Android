@@ -30,6 +30,9 @@ class MainActivity : AppCompatActivity() {
         val mainViewModel = ViewModelProvider(this, ViewModelFactory(pref,this)).get(
             MainViewModel::class.java
         )
+        mainViewModel.getToken().observe(this) { token ->
+            mainViewModel.getModule(token)
+        }
         mainViewModel.getName().observe(this) {
             val fragment = HomeFragment.newInstance()
             val mBundle = Bundle()
@@ -56,23 +59,10 @@ class MainActivity : AppCompatActivity() {
                 }
                 1 -> {
                     val fragment = ModulFragment.newInstance()
-                    if(mainViewModel.module.value != null){
                         val mBundle = Bundle()
                         mBundle.putParcelable(ModulFragment.TOKEN, mainViewModel.module.value)
                         fragment.arguments = mBundle
                         replaceFragment(fragment)
-                    } else {
-                        mainViewModel.getToken().observe(this) { token ->
-                                mainViewModel.getModule(token)
-                                mainViewModel.module.observe(this) { response ->
-                                    val mBundle = Bundle()
-                                    mBundle.putParcelable(ModulFragment.TOKEN, response)
-                                    fragment.arguments = mBundle
-                                        replaceFragment(fragment)
-                                    }
-                                }
-                            }
-
                 }
                 2 -> {
                     replaceFragment(NewsFragment.newInstance())
