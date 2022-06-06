@@ -3,7 +3,6 @@ package com.C22PS320.Akrab.ui.main
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Parcelable
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
@@ -11,7 +10,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.C22PS320.Akrab.*
 import com.C22PS320.Akrab.databinding.ActivityMainBinding
-import com.C22PS320.Akrab.network.response.ModuleResponse
 import com.C22PS320.Akrab.preferences.SettingPreferences
 import com.C22PS320.Akrab.preferences.ViewModelFactory
 import com.C22PS320.Akrab.ui.main.home.HomeFragment
@@ -32,6 +30,9 @@ class MainActivity : AppCompatActivity() {
         val mainViewModel = ViewModelProvider(this, ViewModelFactory(pref,this)).get(
             MainViewModel::class.java
         )
+        mainViewModel.getToken().observe(this) { token ->
+            mainViewModel.getModule(token)
+        }
         mainViewModel.getName().observe(this) {
             val fragment = HomeFragment.newInstance()
             val mBundle = Bundle()
@@ -57,21 +58,11 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
                 1 -> {
-                        mainViewModel.getToken().observe(this) { token ->
-                            val fragment = ModulFragment.newInstance()
-                            val mBundle = Bundle()
-                            mainViewModel.getModule(token)
-                                mainViewModel.module.observe(this) { response ->
-                                    mBundle.putParcelable(ModulFragment.TOKEN, response)
-                                    fragment.arguments = mBundle
-                                    replaceFragment(fragment)
-//                                    val mFragmentManager = supportFragmentManager
-//                                    val frag = mFragmentManager.findFragmentByTag(ModulFragment::class.java.simpleName)
-//                                    if (frag is ModulFragment) {
-//                                        replaceFragment(fragment)
-//                                }
-                            }
-                        }
+                    val fragment = ModulFragment.newInstance()
+                        val mBundle = Bundle()
+                        mBundle.putParcelable(ModulFragment.TOKEN, mainViewModel.module.value)
+                        fragment.arguments = mBundle
+                        replaceFragment(fragment)
                 }
                 2 -> {
                     replaceFragment(NewsFragment.newInstance())
