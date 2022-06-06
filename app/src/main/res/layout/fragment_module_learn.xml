@@ -12,8 +12,8 @@
 
         <ImageView
             android:id="@+id/img_HandModule"
-            android:layout_width="300dp"
-            android:layout_height="300dp"
+            android:layout_width="0dp"
+            android:layout_height="450dp"
             android:src="@drawable/akrab"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

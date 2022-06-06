@@ -6,6 +6,7 @@
         <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/bg_button.xml" value="0.121" />
         <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/bg_button_disable.xml" value="0.121" />
         <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/custom_progressbar.xml" value="0.139" />
+        <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/dialog_bg.xml" value="0.1" />
         <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/ic_baseline_close.xml" value="0.1605" />
         <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/ic_baseline_email.xml" value="0.121" />
         <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/ic_baseline_front_hand.xml" value="0.164" />
@@ -22,17 +23,17 @@
         <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_modul_quiz.xml" value="0.1" />
         <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_register.xml" value="0.176" />
         <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_splash_screen.xml" value="0.1" />
-        <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/layout/finish_layout_dialog.xml" value="0.152" />
+        <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/layout/finish_layout_dialog.xml" value="0.12" />
         <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/layout/fragment_home.xml" value="0.10555555555555556" />
         <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/layout/fragment_modul.xml" value="0.10729166666666666" />
         <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/layout/fragment_module_learn.xml" value="0.264" />
         <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/layout/fragment_news.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/layout/fragment_quiz_learn.xml" value="0.16842105263157894" />
         <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/layout/item_level.xml" value="0.2" />
-        <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/layout/item_module.xml" value="0.24635416666666668" />
-        <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/layout/module_layout_dialog.xml" value="0.152" />
+        <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/layout/item_module.xml" value="0.176" />
+        <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/layout/module_layout_dialog.xml" value="0.1523809523809524" />
         <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/layout/true_layout_dialog.xml" value="0.1" />
-        <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/layout/wrong_layout_dialog.xml" value="0.136" />
+        <entry key="..\:/Users/fiana/AndroidStudioProjects/MyApplication/app/src/main/res/layout/wrong_layout_dialog.xml" value="0.1" />
       </map>
     </option>
   </component>

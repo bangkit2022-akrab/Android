@@ -80,7 +80,7 @@ class QuizLearnFragment : Fragment() {
                         val asu = outputFeature0.floatArray
                         val resultAi = getClassificationResult(asu,hurufLableList)
 
-                        if (resultAi == now?.jawaban){
+                        if (resultAi != now?.jawaban){
                             if (pvt!=mx) {
                                 startDialog(true)
                                 binding.btnNextQuiz.visibility = View.VISIBLE
