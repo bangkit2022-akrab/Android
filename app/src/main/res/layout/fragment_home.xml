@@ -16,7 +16,7 @@
             android:layout_width="wrap_content"
             android:layout_height="167dp"
             android:scaleType="fitXY"
-            android:src="@drawable/header4"
+            android:src="@drawable/header5"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -55,42 +55,55 @@
             android:id="@+id/chosee"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="156dp"
-            android:fontFamily="@font/poppins_bold"
+            android:layout_marginTop="176dp"
+            android:fontFamily="@font/robotobold"
             android:text="@string/choose"
             android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.059"
+            app:layout_constraintHorizontal_bias="0.056"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/chosee2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/robotobold"
+            android:text="@string/choosenumber"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.056"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_kelashuruf"
+            app:layout_constraintVertical_bias="0.135" />
 
         <ImageButton
 
             android:id="@+id/btn_kelashuruf"
-            android:layout_width="150dp"
-            android:layout_height="136dp"
-            android:background="@drawable/corner"
-            android:src="@drawable/ic_baseline_home"
+            android:layout_width="362dp"
+            android:layout_height="135dp"
+            android:background="@drawable/alphabet3"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.111"
+            app:layout_constraintHorizontal_bias="0.51"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/chosee"
-            app:layout_constraintVertical_bias="0.094" />
+            app:layout_constraintVertical_bias="0.052" />
 
         <ImageButton
             android:id="@+id/btn_kelasangka"
-            android:layout_width="150dp"
-            android:layout_height="136dp"
-            android:background="@drawable/corner"
-            android:src="@drawable/ic_baseline_home"
+            android:layout_width="362dp"
+            android:layout_height="135dp"
+            android:background="@drawable/number"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.488"
-            app:layout_constraintStart_toEndOf="@+id/btn_kelashuruf"
-            app:layout_constraintTop_toBottomOf="@+id/chosee"
-            app:layout_constraintVertical_bias="0.094" />
+            app:layout_constraintEnd_toEndOf="@+id/btn_kelashuruf"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/btn_kelashuruf"
+            app:layout_constraintTop_toBottomOf="@+id/chosee2"
+            app:layout_constraintVertical_bias="0.156" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

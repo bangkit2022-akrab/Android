@@ -43,8 +43,8 @@ class MainActivity : AppCompatActivity() {
         binding.bottomNavigation.show(0)
         binding.bottomNavigation.add(MeowBottomNavigation.Model(0, R.drawable.ic_baseline_home))
         binding.bottomNavigation.add(MeowBottomNavigation.Model(1, R.drawable.ic_baseline_library_books_24))
-        binding.bottomNavigation.add(MeowBottomNavigation.Model(2, R.drawable.ic_baseline_subject_24))
-        binding.bottomNavigation.add(MeowBottomNavigation.Model(3, R.drawable.ic_baseline_account_circle))
+//        binding.bottomNavigation.add(MeowBottomNavigation.Model(2, R.drawable.ic_baseline_subject_24))
+        binding.bottomNavigation.add(MeowBottomNavigation.Model(2, R.drawable.ic_baseline_account_circle))
 
         binding.bottomNavigation.setOnClickMenuListener {
             when(it.id){
@@ -64,10 +64,10 @@ class MainActivity : AppCompatActivity() {
                         fragment.arguments = mBundle
                         replaceFragment(fragment)
                 }
+//                2 -> {
+//                    replaceFragment(NewsFragment.newInstance())
+//                }
                 2 -> {
-                    replaceFragment(NewsFragment.newInstance())
-                }
-                3 -> {
                     mainViewModel.getName().observe(this) {
                         val fragment = ProfileFragment.newInstance()
                         val mBundle = Bundle()
