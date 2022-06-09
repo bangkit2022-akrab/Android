@@ -5,6 +5,7 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 
 class SettingPreferences private constructor(private val dataStore: DataStore<Preferences>) {
@@ -12,10 +13,10 @@ class SettingPreferences private constructor(private val dataStore: DataStore<Pr
     private val EMAIL= stringPreferencesKey("email")
     private val TOKEN = stringPreferencesKey("token")
 
-    fun getUserToken(): Flow<String?> {
+    suspend fun getUserToken(): String? {
         return dataStore.data.map {
             it[TOKEN]
-        }
+        }.first()
     }
     fun getUserName(): Flow<String?> {
         return dataStore.data.map {

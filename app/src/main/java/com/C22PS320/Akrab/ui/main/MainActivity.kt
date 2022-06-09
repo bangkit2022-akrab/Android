@@ -8,6 +8,7 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import com.C22PS320.Akrab.*
 import com.C22PS320.Akrab.databinding.ActivityMainBinding
 import com.C22PS320.Akrab.preferences.SettingPreferences
@@ -17,6 +18,7 @@ import com.C22PS320.Akrab.ui.main.modul.ModulFragment
 import com.C22PS320.Akrab.ui.main.news.NewsFragment
 import com.C22PS320.Akrab.ui.main.profile.ProfileFragment
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation
+import kotlinx.coroutines.launch
 
 
 class MainActivity : AppCompatActivity() {
@@ -30,7 +32,8 @@ class MainActivity : AppCompatActivity() {
         val mainViewModel = ViewModelProvider(this, ViewModelFactory(pref,this)).get(
             MainViewModel::class.java
         )
-        mainViewModel.getToken().observe(this) { token ->
+        lifecycleScope.launch {
+            val token = mainViewModel.getToken()
             mainViewModel.getModule(token)
         }
         mainViewModel.getName().observe(this) {

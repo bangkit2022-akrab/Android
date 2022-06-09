@@ -9,6 +9,7 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.C22PS320.Akrab.adapter.LevelAdapter
@@ -17,6 +18,7 @@ import com.C22PS320.Akrab.network.response.LevelResponse
 import com.C22PS320.Akrab.preferences.SettingPreferences
 import com.C22PS320.Akrab.preferences.ViewModelFactory
 import com.C22PS320.Akrab.ui.modulquiz.ModulQuizActivity
+import kotlinx.coroutines.launch
 
 class ClassActivity : AppCompatActivity() {
     private lateinit var binding: ActivityClassBinding
@@ -30,8 +32,9 @@ class ClassActivity : AppCompatActivity() {
         val classViewModel = ViewModelProvider(this, ViewModelFactory(pref,this)).get(
             ClassViewModel::class.java
         )
-        classViewModel.getToken().observe(this) {
-            classViewModel.getLevelClass(kelas, it)
+        lifecycleScope.launch {
+            val token = classViewModel.getToken()
+            classViewModel.getLevelClass(kelas, token)
         }
         classViewModel.levelClass.observe(this) {
             setReviewData(it)

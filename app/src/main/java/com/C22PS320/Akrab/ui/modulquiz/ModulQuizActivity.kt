@@ -2,23 +2,30 @@ package com.C22PS320.Akrab.ui.modulquiz
 
 import android.Manifest
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.activity.result.ActivityResultLauncher
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.core.view.isVisible
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
+import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import com.C22PS320.Akrab.R
 import com.C22PS320.Akrab.databinding.ActivityModulQuizBinding
 import com.C22PS320.Akrab.preferences.SettingPreferences
 import com.C22PS320.Akrab.preferences.ViewModelFactory
+import com.C22PS320.Akrab.ui.camera.CameraActivity
 import com.C22PS320.Akrab.ui.modulquiz.learnmodule.ModuleLearnFragment
 import com.C22PS320.Akrab.ui.modulquiz.learnquiz.QuizLearnFragment
+import kotlinx.coroutines.launch
 
 class ModulQuizActivity : AppCompatActivity() {
     private lateinit var binding: ActivityModulQuizBinding
@@ -62,21 +69,23 @@ class ModulQuizActivity : AppCompatActivity() {
         val modulQuizViewModel = ViewModelProvider(this, ViewModelFactory(pref,this)).get(
             ModulQuizViewModel::class.java
         )
-        if (savedInstanceState == null) {
-            modulQuizViewModel.getToken().observe(this) {
-                modulQuizViewModel.getModuleQuiz(level, it)
+
+        val mFragmentManager = supportFragmentManager
+        val frgm = mFragmentManager.findFragmentByTag(QuizLearnFragment::class.java.simpleName)
+
+        if (frgm==null) {
+            lifecycleScope.launch {
+                val token = modulQuizViewModel.getToken()
+                modulQuizViewModel.getModuleQuiz(level, token)
             }
+
             modulQuizViewModel.moduleQuiz.observe(this) {
-                val mFragmentManager = supportFragmentManager
                 val mHomeFragment = ModuleLearnFragment.newInstance()
                 val mBundle = Bundle()
                 mBundle.putParcelable(ModuleLearnFragment.DATAMODULEQUIZ, it)
                 mBundle.putInt(ModuleLearnFragment.PIVOT, INIT)
                 it.data?.modul?.let { it1 -> mBundle.putInt(ModuleLearnFragment.MAX, it1?.size) }
                 mHomeFragment.arguments = mBundle
-                val fragment =
-                    mFragmentManager.findFragmentByTag(ModuleLearnFragment::class.java.simpleName)
-                if (fragment !is QuizLearnFragment) {
                     mFragmentManager
                         .beginTransaction()
                         .add(
@@ -86,12 +95,12 @@ class ModulQuizActivity : AppCompatActivity() {
                         )
                         .commit()
                 }
-            }
-            modulQuizViewModel.isLoading.observe(this) {
+        }
+        modulQuizViewModel.isLoading.observe(this) {
                 showLoading(it)
-            }
         }
     }
+
 
     private fun showLoading(isLoading: Boolean) {
         binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE

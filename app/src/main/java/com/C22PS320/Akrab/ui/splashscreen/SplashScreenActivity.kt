@@ -11,11 +11,14 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import com.C22PS320.Akrab.databinding.ActivitySplashScreenBinding
 import com.C22PS320.Akrab.preferences.SettingPreferences
 import com.C22PS320.Akrab.preferences.ViewModelFactory
 import com.C22PS320.Akrab.ui.login.LoginActivity
 import com.C22PS320.Akrab.ui.main.MainActivity
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class SplashScreenActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySplashScreenBinding
@@ -29,18 +32,17 @@ class SplashScreenActivity : AppCompatActivity() {
             SplashScreenViewModel::class.java
         )
         binding.progressBar.visibility = View.VISIBLE
-        Handler(Looper.getMainLooper()).postDelayed({
-
+        lifecycleScope.launch {
+            val token = splashScreenViewModel.getToken()
+            delay(2500)
             binding.progressBar.visibility = View.GONE
-            splashScreenViewModel.getToken().observe(this) {
-                if (it.isNullOrEmpty()){
-                    startActivity(Intent(this, LoginActivity::class.java))
-                }else {
-                    startActivity(Intent(this, MainActivity::class.java))
-                }
-                finish()
+            if (token.isNullOrEmpty()){
+                startActivity(Intent(this@SplashScreenActivity, LoginActivity::class.java))
+            }else {
+                startActivity(Intent(this@SplashScreenActivity, MainActivity::class.java))
             }
-        },2500)
+            finish()
+        }
     }
     companion object {
         private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")

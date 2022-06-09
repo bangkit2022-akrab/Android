@@ -21,8 +21,8 @@ class MainViewModel(private val pref: SettingPreferences): ViewModel() {
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> = _isLoading
 
-    fun getToken(): LiveData<String?> {
-        return pref.getUserToken().asLiveData()
+    suspend fun getToken(): String? {
+        return pref.getUserToken()
     }
     fun getName(): LiveData<String?> {
         return pref.getUserName().asLiveData()

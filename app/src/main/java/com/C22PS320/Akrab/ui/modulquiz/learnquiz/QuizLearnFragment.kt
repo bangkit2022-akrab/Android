@@ -16,10 +16,8 @@ import com.C22PS320.Akrab.R
 import com.C22PS320.Akrab.databinding.FragmentQuizLearnBinding
 import com.C22PS320.Akrab.ml.AlphabetModel
 import com.C22PS320.Akrab.network.response.ModuleQuizResponse
-import com.C22PS320.Akrab.network.response.QuizItem
 import com.C22PS320.Akrab.preferences.rotateBitmap
 import com.C22PS320.Akrab.ui.camera.CameraActivity
-import com.C22PS320.Akrab.ui.modulquiz.learnmodule.ModuleLearnFragment
 import org.tensorflow.lite.DataType
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
 import java.io.File
@@ -38,10 +36,9 @@ class QuizLearnFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentQuizLearnBinding.inflate(inflater, container, false)
-        val view = binding.root
-        return view
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -52,9 +49,6 @@ class QuizLearnFragment : Fragment() {
         val now = data?.data?.quiz?.get(pvt!!)
         binding.textView.text = now?.soal
         binding.btnNextQuiz.visibility = View.GONE
-        binding.btnNextQuiz.setOnClickListener {
-            changeQuiz(data,pvt,mx)
-        }
         val launcherIntentCameraX = registerForActivityResult(
             ActivityResultContracts.StartActivityForResult()
         ) {
@@ -65,51 +59,52 @@ class QuizLearnFragment : Fragment() {
                 result = rotateBitmap(result, isBackCamera)
                 val scaledBitmap = Bitmap.createScaledBitmap(result, INPUT_SIZE, INPUT_SIZE, false)
                 binding.imageView2.setImageBitmap(result)
-                var resized = convertBitmapToByteBuffer(scaledBitmap)
-                when (data?.data?.tipe){
-                    "huruf"-> {
-                        val model = AlphabetModel.newInstance(view?.context ?: requireContext())
+                val resized = convertBitmapToByteBuffer(scaledBitmap)
 
-                        val inputFeature0 = TensorBuffer.createFixedSize(intArrayOf(1, 150, 150, 3), DataType.FLOAT32)
-                        inputFeature0.loadBuffer(resized)
+                val model = AlphabetModel.newInstance(requireContext())
 
-                        val outputs = model.process(inputFeature0)
-                        val outputFeature0 = outputs.outputFeature0AsTensorBuffer
+                val inputFeature0 =
+                    TensorBuffer.createFixedSize(intArrayOf(1, 150, 150, 3), DataType.FLOAT32)
+                inputFeature0.loadBuffer(resized)
 
-                        model.close()
-                        val asu = outputFeature0.floatArray
-                        val resultAi = getClassificationResult(asu,hurufLableList)
+                val outputs = model.process(inputFeature0)
+                val outputFeature0 = outputs.outputFeature0AsTensorBuffer
 
-                        if (resultAi == now?.jawaban){
-                            if (pvt!=mx) {
-                                startDialog(true)
-                                binding.btnNextQuiz.visibility = View.VISIBLE
-                            }else{
-                                binding.btnNextQuiz.visibility = View.GONE
-                                endQuiz()
-                            }
-                        }else{
-                            startDialog(false)
-                        }
+                model.close()
+                val output = outputFeature0.floatArray
+                val resultAi = output.let { it1 -> getClassificationResult(it1, hurufLableList) }
+
+                if (resultAi == now?.jawaban) {
+                    if (pvt != mx) {
+                        startDialog(true)
+                        binding.btnNextQuiz.visibility = View.VISIBLE
+                    } else {
+                        binding.btnNextQuiz.visibility = View.GONE
+                        endQuiz()
                     }
+                } else {
+                    startDialog(false)
                 }
+
             }
+        }
+
+        binding.btnNextQuiz.setOnClickListener {
+            changeQuiz(data, pvt, mx)
         }
         binding.btnPhotoQuiz.setOnClickListener {
             startCameraX(launcherIntentCameraX)
         }
-
     }
     private fun startCameraX(launcherIntentCameraX: ActivityResultLauncher<Intent>) {
-        val intent = Intent(view?.context, CameraActivity::class.java)
+        val intent = Intent(requireContext(), CameraActivity::class.java)
         launcherIntentCameraX.launch(intent)
     }
     private fun startDialog(stat: Boolean){
-        var dialogView: View
-        if (stat){
-            dialogView = layoutInflater.inflate(R.layout.true_layout_dialog, null)
+        val dialogView: View = if (stat){
+            layoutInflater.inflate(R.layout.true_layout_dialog, null)
         }else{
-            dialogView = layoutInflater.inflate(R.layout.wrong_layout_dialog, null)
+            layoutInflater.inflate(R.layout.wrong_layout_dialog, null)
         }
         val customDialog = AlertDialog.Builder(view?.context ?: requireContext())
             .setView(dialogView)
@@ -121,7 +116,7 @@ class QuizLearnFragment : Fragment() {
         }
     }
     private fun endQuiz(){
-        var dialogView = layoutInflater.inflate(R.layout.finish_layout_dialog, null)
+        val dialogView = layoutInflater.inflate(R.layout.finish_layout_dialog, null)
         val customDialog = AlertDialog.Builder(view?.context ?: requireContext())
             .setView(dialogView)
             .show()
@@ -181,10 +176,10 @@ class QuizLearnFragment : Fragment() {
         const val DATAMODULEQUIZ: String = "data"
         const val PIVOT: String = "prev"
         const val MAX: String = "next"
-        private val INPUT_SIZE = 150
-        private val PIXEL_SIZE: Int = 3
-        private val IMAGE_MEAN = 0
-        private val IMAGE_STD = 255.0f
+        private const val INPUT_SIZE = 150
+        private const val PIXEL_SIZE: Int = 3
+        private const val IMAGE_MEAN = 0
+        private const val IMAGE_STD = 255.0f
 
 
         const val CAMERA_X_RESULT = 200

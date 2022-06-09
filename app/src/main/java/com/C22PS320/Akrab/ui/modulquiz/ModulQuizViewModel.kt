@@ -2,13 +2,11 @@ package com.C22PS320.Akrab.ui.modulquiz
 
 import android.content.ContentValues
 import android.util.Log
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.asLiveData
+import androidx.lifecycle.*
 import com.C22PS320.Akrab.network.ApiConfig
 import com.C22PS320.Akrab.network.response.ModuleQuizResponse
 import com.C22PS320.Akrab.preferences.SettingPreferences
+import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -20,8 +18,8 @@ class ModulQuizViewModel(private val pref: SettingPreferences): ViewModel() {
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> = _isLoading
 
-    fun getToken(): LiveData<String?> {
-        return pref.getUserToken().asLiveData()
+    suspend fun getToken(): String? {
+        return pref.getUserToken()
     }
     fun getModuleQuiz(level:String?, token: String?) {
         _isLoading.value = true
