@@ -2,6 +2,7 @@ package com.C22PS320.Akrab.adapter
 
 import android.graphics.Color
 import android.view.LayoutInflater
+import android.view.RoundedCorner
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -10,6 +11,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.C22PS320.Akrab.R
 import com.C22PS320.Akrab.network.response.DataItem
 import com.bumptech.glide.Glide
+import com.bumptech.glide.RequestBuilder
+import com.bumptech.glide.load.resource.bitmap.CenterInside
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 
 class LevelAdapter(private val listUser: List<DataItem?>?) : RecyclerView.Adapter<LevelAdapter.ViewHolder>() {
     private lateinit var onItemClickCallback: OnItemClickCallback
@@ -25,6 +29,7 @@ class LevelAdapter(private val listUser: List<DataItem?>?) : RecyclerView.Adapte
         viewHolder.itemView.setBackgroundColor(Color.LTGRAY)
         Glide.with(viewHolder.itemView.context)
             .load("${listUser?.get(position)?.imageLevel}")
+            .transform(CenterInside(), RoundedCorners(35))
             .into(viewHolder.imgItemPhoto)
         viewHolder.itemView.setOnClickListener { listUser?.get(viewHolder.adapterPosition)
             ?.let { it1 ->

@@ -2,14 +2,12 @@ package com.C22PS320.Akrab.ui.main
 
 import android.content.ContentValues
 import android.util.Log
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.asLiveData
+import androidx.lifecycle.*
 import com.C22PS320.Akrab.network.ApiConfig
 import com.C22PS320.Akrab.network.response.LevelResponse
 import com.C22PS320.Akrab.network.response.ModuleResponse
 import com.C22PS320.Akrab.preferences.SettingPreferences
+import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -24,8 +22,19 @@ class MainViewModel(private val pref: SettingPreferences): ViewModel() {
     suspend fun getToken(): String? {
         return pref.getUserToken()
     }
-    fun getName(): LiveData<String?> {
+    suspend fun getName(): String? {
+        return pref.getName()
+    }
+    fun getUserName(): LiveData<String?> {
         return pref.getUserName().asLiveData()
+    }
+    fun getUserData(): LiveData<String?> {
+        return pref.getEmail().asLiveData()
+    }
+    fun deleteAllDatas() {
+        viewModelScope.launch {
+            pref.deleteAllData()
+        }
     }
     fun getModule(token: String?) {
         _isLoading.value = true

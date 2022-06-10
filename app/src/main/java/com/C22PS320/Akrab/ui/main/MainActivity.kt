@@ -35,14 +35,13 @@ class MainActivity : AppCompatActivity() {
         )
         lifecycleScope.launch {
             val token = mainViewModel.getToken()
+            val name = mainViewModel.getName()
             mainViewModel.getModule(token)
-        }
-        mainViewModel.getName().observe(this) {
-            val fragment = HomeFragment.newInstance()
-            val mBundle = Bundle()
-            mBundle.putString(HomeFragment.EXTRA_NAME, it)
-            fragment.arguments = mBundle
-            replaceFragment(fragment)
+                val fragment = HomeFragment.newInstance()
+                val mBundle = Bundle()
+                mBundle.putString(HomeFragment.EXTRA_NAME, name)
+                fragment.arguments = mBundle
+                replaceFragment(fragment)
         }
         binding.bottomNavigation.show(0)
         binding.bottomNavigation.add(MeowBottomNavigation.Model(0, R.drawable.ic_baseline_home))
@@ -53,7 +52,7 @@ class MainActivity : AppCompatActivity() {
         binding.bottomNavigation.setOnClickMenuListener {
             when(it.id){
                 0 -> {
-                    mainViewModel.getName().observe(this) {
+                    mainViewModel.getUserName().observe(this) {
                         val fragment = HomeFragment.newInstance()
                         val mBundle = Bundle()
                         mBundle.putString(HomeFragment.EXTRA_NAME, it)
@@ -72,13 +71,19 @@ class MainActivity : AppCompatActivity() {
 //                    replaceFragment(NewsFragment.newInstance())
 //                }
                 2 -> {
-                    mainViewModel.getName().observe(this) {
                         val fragment = ProfileFragment.newInstance()
                         val mBundle = Bundle()
-                        mBundle.putString(ProfileFragment.EXTRA_NAME, it)
+                    mainViewModel.getUserName().observe(this) { name ->
+                        mainViewModel.getUserData().observe(this) {email ->
+                            mBundle.putString(ProfileFragment.EXTRA_NAME, name)
+                            mBundle.putString(
+                                ProfileFragment.EXTRA_EMAIL,
+                               email
+                            )
+                        }
+                    }
                         fragment.arguments = mBundle
                         replaceFragment(fragment)
-                    }
 
                 }else ->{
                 replaceFragment(HomeFragment.newInstance())
@@ -89,14 +94,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-       if (binding.bottomNavigation.isShowing(0))
-       {
-           super.onBackPressed()
-           finish()
-       } else{
-           super.onBackPressed()
-           finish()
-       }
+        super.onBackPressed()
+        finish()
     }
     private fun replaceFragment(fragment: Fragment){
 
@@ -104,16 +103,9 @@ class MainActivity : AppCompatActivity() {
         fragmentTransition.replace(R.id.FragmentContainer,fragment).addToBackStack(Fragment::class.java.simpleName).commit()
 
     }
-    private fun addFragment(fragment: Fragment){
-
-        val fragmentTransition = supportFragmentManager.beginTransaction()
-        fragmentTransition.add(R.id.FragmentContainer,fragment).addToBackStack(Fragment::class.java.simpleName).commit()
-
-    }
 
     companion object {
-        private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
-        private var back = 0L
+        val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
 
     }
 }

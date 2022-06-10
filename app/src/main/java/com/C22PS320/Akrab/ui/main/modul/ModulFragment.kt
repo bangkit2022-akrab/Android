@@ -60,8 +60,8 @@ class ModulFragment : Fragment() {
             binding.progressBar.visibility = View.GONE
             val layoutManager = GridLayoutManager(view?.context, 4)
             binding.rvModule.layoutManager = layoutManager
-            val itemDecoration = DividerItemDecoration(view?.context, layoutManager.orientation)
-            binding.rvModule.addItemDecoration(itemDecoration)
+//            val itemDecoration = DividerItemDecoration(view?.context, layoutManager.orientation)
+//            binding.rvModule.addItemDecoration(itemDecoration)
             setModuleData(data?.data)
         }
     }

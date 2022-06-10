@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginTop="7dp"
-    android:layout_marginBottom="7dp"
-    app:cardCornerRadius="8dp"
-    app:cardElevation="5dp"
+    android:layout_marginBottom="20dp"
+    app:cardCornerRadius="14dp"
     app:cardPreventCornerOverlap="false"
-    app:cardUseCompatPadding="true">
+    app:cardUseCompatPadding="false"
+    card_view:cardElevation="10dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingBottom="8dp">
+        android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/icon_image_view"
@@ -33,7 +32,6 @@
             android:layout_below="@id/icon_image_view"
             android:layout_marginTop="8dp"
             android:gravity="center"
-            android:text="Title Text"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@+id/icon_image_view"
             app:layout_constraintStart_toStartOf="@+id/icon_image_view"

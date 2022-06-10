@@ -4,8 +4,6 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.view.View
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
@@ -17,7 +15,6 @@ import com.C22PS320.Akrab.preferences.SettingPreferences
 import com.C22PS320.Akrab.preferences.ViewModelFactory
 import com.C22PS320.Akrab.ui.login.LoginActivity
 import com.C22PS320.Akrab.ui.main.MainActivity
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 class SplashScreenActivity : AppCompatActivity() {
@@ -34,7 +31,6 @@ class SplashScreenActivity : AppCompatActivity() {
         binding.progressBar.visibility = View.VISIBLE
         lifecycleScope.launch {
             val token = splashScreenViewModel.getToken()
-            delay(2500)
             binding.progressBar.visibility = View.GONE
             if (token.isNullOrEmpty()){
                 startActivity(Intent(this@SplashScreenActivity, LoginActivity::class.java))

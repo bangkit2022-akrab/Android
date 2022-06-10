@@ -11,6 +11,7 @@ import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.C22PS320.Akrab.adapter.LevelAdapter
 import com.C22PS320.Akrab.databinding.ActivityClassBinding
@@ -44,8 +45,8 @@ class ClassActivity : AppCompatActivity() {
         }
         val layoutManager = LinearLayoutManager(this)
         binding.rvUsers.layoutManager = layoutManager
-        val itemDecoration = DividerItemDecoration(this, layoutManager.orientation)
-        binding.rvUsers.addItemDecoration(itemDecoration)
+//        val itemDecoration = DividerItemDecoration(this, DividerItemDecoration.VERTICAL)
+//        binding.rvUsers.addItemDecoration(itemDecoration)
     }
     private fun setReviewData(UsersData: LevelResponse) {
         val adapter = LevelAdapter(UsersData.data)

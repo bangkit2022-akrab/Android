@@ -18,9 +18,19 @@ class SettingPreferences private constructor(private val dataStore: DataStore<Pr
             it[TOKEN]
         }.first()
     }
+    suspend fun getName(): String? {
+        return dataStore.data.map {
+            it[NAME]
+        }.first()
+    }
     fun getUserName(): Flow<String?> {
         return dataStore.data.map {
             it[NAME]
+        }
+    }
+    fun getEmail(): Flow<String?> {
+        return dataStore.data.map {
+            it[EMAIL]
         }
     }
     suspend fun SaveUserSession(name:String, email: String,token: String) {

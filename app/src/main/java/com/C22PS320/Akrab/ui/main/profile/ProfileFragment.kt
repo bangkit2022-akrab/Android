@@ -7,10 +7,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import com.C22PS320.Akrab.R
 import com.C22PS320.Akrab.databinding.FragmentHomeBinding
 import com.C22PS320.Akrab.databinding.FragmentProfileBinding
+import com.C22PS320.Akrab.preferences.SettingPreferences
+import com.C22PS320.Akrab.preferences.ViewModelFactory
 import com.C22PS320.Akrab.ui.kelas.ClassActivity
+import com.C22PS320.Akrab.ui.login.LoginActivity
+import com.C22PS320.Akrab.ui.main.MainActivity
+import com.C22PS320.Akrab.ui.main.MainActivity.Companion.dataStore
+import com.C22PS320.Akrab.ui.main.MainViewModel
 import com.C22PS320.Akrab.ui.main.home.HomeFragment
 
 class ProfileFragment : Fragment() {
@@ -47,10 +54,16 @@ class ProfileFragment : Fragment() {
         (activity as AppCompatActivity).supportActionBar?.hide()
         if(arguments!= null) {
             binding.tvUsername.text = arguments?.getString(EXTRA_NAME)
+            binding.TvEmail.text = arguments?.getString(EXTRA_EMAIL)
         }
+        val mainViewModel = ViewModelProvider(this, ViewModelFactory(SettingPreferences.getInstance(
+            (activity as AppCompatActivity).dataStore),requireActivity())).get(
+            MainViewModel::class.java
+        )
         binding.btnLogout.setOnClickListener {
-            val i = Intent(view?.context, ClassActivity::class.java)
-            i.putExtra("class","huruf")
+            mainViewModel.deleteAllDatas()
+            val i = Intent(requireContext(), LoginActivity::class.java)
+            i.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(i)
         }
 //        (activity as AppCompatActivity).supportActionBar?.show()
