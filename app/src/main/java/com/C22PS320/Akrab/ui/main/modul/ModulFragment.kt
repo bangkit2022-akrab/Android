@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -28,6 +29,11 @@ class ModulFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+       val callback = object : OnBackPressedCallback(true){
+           override fun handleOnBackPressed() {
+
+           }
+       }
         _binding = FragmentModulBinding.inflate(inflater, container, false)
         val view = binding.root
         return view

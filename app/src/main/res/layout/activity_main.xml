@@ -58,15 +58,15 @@
         android:id="@+id/FragmentContainer"/>
 
     <com.etebarian.meowbottomnavigation.MeowBottomNavigation
+        android:id="@+id/bottomNavigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/bottomNavigation"
         android:layout_alignParentBottom="true"
         app:mbn_countBackgroundColor="#ff6f00"
         app:mbn_countTextColor="#000"
         app:mbn_defaultIconColor="#909090"
-        app:mbn_rippleColor="#00B4D8"
-        app:mbn_selectedIconColor="#0077B6"
+        app:mbn_rippleColor="#03A9F4"
+        app:mbn_selectedIconColor="#00B4D8"
         tools:ignore="MissingClass,MissingConstraints" />
 
 </RelativeLayout>

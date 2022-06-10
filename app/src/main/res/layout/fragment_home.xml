@@ -11,41 +11,41 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="wrap_content"
-            android:layout_height="167dp"
-            android:scaleType="fitXY"
-            android:src="@drawable/header5"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
+        <ImageView
+            android:id="@+id/imageView10"
+            android:layout_width="88dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="40dp"
+
+            app:layout_constraintEnd_toStartOf="@+id/hello"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/user_profile" />
 
         <TextView
             android:id="@+id/hello"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="48dp"
-            android:fontFamily="@font/poppins_bolditalic"
+            android:layout_marginTop="52dp"
+            android:fontFamily="@font/robotobold"
             android:text="@string/hello"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.059"
+            app:layout_constraintHorizontal_bias="0.354"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
 
         <TextView
             android:id="@+id/tv_username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins_bolditalic"
-            android:text="@string/hello"
-            android:textColor="@color/white"
-            android:textSize="24sp"
+            android:fontFamily="@font/robotobold"
+            android:text="Tes"
+            android:textColor="@color/black"
+            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="@+id/hello"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/hello"
@@ -55,13 +55,13 @@
             android:id="@+id/chosee"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="176dp"
+            android:layout_marginTop="132dp"
             android:fontFamily="@font/robotobold"
             android:text="@string/choose"
             android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.056"
+            app:layout_constraintHorizontal_bias="0.063"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -78,14 +78,14 @@
             app:layout_constraintHorizontal_bias="0.056"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btn_kelashuruf"
-            app:layout_constraintVertical_bias="0.135" />
+            app:layout_constraintVertical_bias="0.065" />
 
         <ImageButton
 
             android:id="@+id/btn_kelashuruf"
             android:layout_width="362dp"
             android:layout_height="135dp"
-            android:background="@drawable/alphabet3"
+            android:background="@drawable/butlet"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.51"
@@ -97,13 +97,13 @@
             android:id="@+id/btn_kelasangka"
             android:layout_width="362dp"
             android:layout_height="135dp"
-            android:background="@drawable/number"
+            android:background="@drawable/butnumber"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/btn_kelashuruf"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/btn_kelashuruf"
             app:layout_constraintTop_toBottomOf="@+id/chosee2"
-            app:layout_constraintVertical_bias="0.156" />
+            app:layout_constraintVertical_bias="0.122" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

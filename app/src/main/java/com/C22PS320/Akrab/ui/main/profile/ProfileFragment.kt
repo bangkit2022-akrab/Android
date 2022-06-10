@@ -34,7 +34,7 @@ class ProfileFragment : Fragment() {
 
     companion object {
         val EXTRA_NAME: String? = "NAME"
-
+        val EXTRA_EMAIL: String? = "MAIL"
         @JvmStatic
         fun newInstance() =
             ProfileFragment().apply {

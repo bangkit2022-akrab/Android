@@ -3,6 +3,7 @@ package com.C22PS320.Akrab.ui.main
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
@@ -86,13 +87,33 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+
+    override fun onBackPressed() {
+       if (binding.bottomNavigation.isShowing(0))
+       {
+           super.onBackPressed()
+           finish()
+       } else{
+           super.onBackPressed()
+           finish()
+       }
+    }
     private fun replaceFragment(fragment: Fragment){
 
         val fragmentTransition = supportFragmentManager.beginTransaction()
         fragmentTransition.replace(R.id.FragmentContainer,fragment).addToBackStack(Fragment::class.java.simpleName).commit()
 
     }
+    private fun addFragment(fragment: Fragment){
+
+        val fragmentTransition = supportFragmentManager.beginTransaction()
+        fragmentTransition.add(R.id.FragmentContainer,fragment).addToBackStack(Fragment::class.java.simpleName).commit()
+
+    }
+
     companion object {
         private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
+        private var back = 0L
+
     }
 }
