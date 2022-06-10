@@ -11,100 +11,158 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
-        <ImageView
-            android:id="@+id/imageView10"
-            android:layout_width="88dp"
-            android:layout_height="70dp"
-            android:layout_marginTop="40dp"
-
-            app:layout_constraintEnd_toStartOf="@+id/hello"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/user_profile" />
-
-        <TextView
-            android:id="@+id/hello"
-            android:layout_width="wrap_content"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="52dp"
-            android:fontFamily="@font/robotobold"
-            android:text="@string/hello"
-            android:textColor="@color/black"
-            android:textSize="18sp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/customborder"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.354"
+            app:layout_constraintHorizontal_bias="0.08"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/tv_username"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/robotobold"
-            android:text="Tes"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="@+id/hello"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/hello"
-            app:layout_constraintTop_toBottomOf="@+id/hello" />
+            <ImageView
+                android:id="@+id/imageView10"
+                android:layout_width="88dp"
+                android:layout_height="70dp"
+                android:contentDescription="@string/app_name"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/user_profile" />
+
+            <TextView
+                android:id="@+id/hello"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/robotobold"
+                android:text="@string/hello"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView10"
+                app:layout_constraintStart_toEndOf="@+id/imageView10"
+                app:layout_constraintTop_toTopOf="@+id/imageView10"
+                app:layout_constraintVertical_bias="0.32" />
+
+            <TextView
+                android:id="@+id/tv_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/robotobold"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@+id/hello"
+                app:layout_constraintStart_toEndOf="@+id/hello"
+                app:layout_constraintTop_toTopOf="@+id/hello"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <TextView
+                android:id="@+id/tv_niceday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/have_a_nice_day"
+                app:layout_constraintStart_toStartOf="@+id/hello"
+                app:layout_constraintTop_toBottomOf="@+id/hello" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="88dp"
+                android:layout_height="70dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/akrab"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
             android:id="@+id/chosee"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="132dp"
+            android:layout_marginTop="16dp"
             android:fontFamily="@font/robotobold"
-            android:text="@string/choose"
+            android:text="Recommended Class"
             android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.063"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
         <TextView
             android:id="@+id/chosee2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:fontFamily="@font/robotobold"
-            android:text="@string/choosenumber"
+            android:text="Insight"
             android:textColor="@color/black"
             android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/chosee"
+            app:layout_constraintTop_toBottomOf="@+id/llclasshome" />
+
+        <HorizontalScrollView
+            android:id="@+id/llclasshome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@+id/constraintLayout"
+            app:layout_constraintStart_toStartOf="@id/chosee"
+            app:layout_constraintTop_toBottomOf="@+id/chosee">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+
+                    android:id="@+id/btn_kelashuruf"
+                    android:layout_width="362dp"
+                    android:layout_height="135dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/butlet"
+                    android:contentDescription="@string/app_name"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.51"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/chosee"
+                    app:layout_constraintVertical_bias="0.052" />
+
+                <ImageButton
+                    android:id="@+id/btn_kelasangka"
+                    android:layout_width="362dp"
+                    android:layout_height="135dp"
+                    android:background="@drawable/butnumber"
+                    android:contentDescription="@string/app_name"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/btn_kelashuruf"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/btn_kelashuruf"
+                    app:layout_constraintTop_toBottomOf="@+id/chosee2"
+                    app:layout_constraintVertical_bias="0.122" />
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            app:autoPlay="false"
+            android:background="@drawable/customborder"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.056"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_kelashuruf"
-            app:layout_constraintVertical_bias="0.065" />
-
-        <ImageButton
-
-            android:id="@+id/btn_kelashuruf"
-            android:layout_width="362dp"
-            android:layout_height="135dp"
-            android:background="@drawable/butlet"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.51"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/chosee"
-            app:layout_constraintVertical_bias="0.052" />
-
-        <ImageButton
-            android:id="@+id/btn_kelasangka"
-            android:layout_width="362dp"
-            android:layout_height="135dp"
-            android:background="@drawable/butnumber"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/btn_kelashuruf"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/btn_kelashuruf"
+            app:layout_constraintStart_toStartOf="@+id/chosee2"
             app:layout_constraintTop_toBottomOf="@+id/chosee2"
-            app:layout_constraintVertical_bias="0.122" />
+            app:videoId="s4W10a6OmCI">
 
+        </com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

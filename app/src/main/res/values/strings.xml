@@ -27,9 +27,9 @@
     <string name="six_chara_password">Password must more than 6 character!</string>
     <string name="create_your_account">Create Your Account</string>
     <string name="login_to_your_account">Login to your Account</string>
-    <string name="hello">Welcome Back,</string>
+    <string name="hello">Hi,</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="choose">Category Letter</string>
     <string name="choosenumber">Category Number</string>
+    <string name="have_a_nice_day">Have a Nice day!</string>
 </resources>

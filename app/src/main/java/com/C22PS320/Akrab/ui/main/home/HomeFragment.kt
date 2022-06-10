@@ -47,12 +47,12 @@ class HomeFragment : Fragment() {
         }
         binding.btnKelashuruf.setOnClickListener {
             val i = Intent(view?.context, ClassActivity::class.java)
-            i.putExtra("class","huruf")
+            i.putExtra("class","letter")
             startActivity(i)
         }
         binding.btnKelasangka.setOnClickListener {
             val i = Intent(view?.context, ClassActivity::class.java)
-            i.putExtra("class","angka")
+            i.putExtra("class","number")
             startActivity(i)
         }
     }

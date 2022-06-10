@@ -67,9 +67,6 @@ class MainActivity : AppCompatActivity() {
                         fragment.arguments = mBundle
                         replaceFragment(fragment)
                 }
-//                2 -> {
-//                    replaceFragment(NewsFragment.newInstance())
-//                }
                 2 -> {
                         val fragment = ProfileFragment.newInstance()
                         val mBundle = Bundle()

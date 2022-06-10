@@ -43,10 +43,9 @@ class ClassActivity : AppCompatActivity() {
         classViewModel.isLoading.observe(this) {
             showLoading(it)
         }
-        val layoutManager = LinearLayoutManager(this)
+        val layoutManager = GridLayoutManager(this,2)
         binding.rvUsers.layoutManager = layoutManager
-//        val itemDecoration = DividerItemDecoration(this, DividerItemDecoration.VERTICAL)
-//        binding.rvUsers.addItemDecoration(itemDecoration)
+
     }
     private fun setReviewData(UsersData: LevelResponse) {
         val adapter = LevelAdapter(UsersData.data)

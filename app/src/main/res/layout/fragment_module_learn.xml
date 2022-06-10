@@ -14,36 +14,50 @@
             android:id="@+id/img_HandModule"
             android:layout_width="0dp"
             android:layout_height="450dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/customborder"
             android:src="@drawable/akrab"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:src="@tools:sample/backgrounds/scenic" />
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:fontFamily="sans-serif-condensed"
-            android:textAlignment="center"
-            android:textSize="32dp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@id/img_HandModule"
-            app:layout_constraintStart_toStartOf="@id/img_HandModule"
-            app:layout_constraintTop_toBottomOf="@+id/img_HandModule" />
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="0dp"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/txtModuleLearn"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:fontFamily="sans-serif-light"
-            android:textSize="16sp"
-            android:textStyle="italic"
-            app:layout_constraintEnd_toEndOf="@id/textView"
-            app:layout_constraintStart_toStartOf="@+id/textView"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            android:background="@drawable/customborder"
+            app:layout_constraintEnd_toEndOf="@id/img_HandModule"
+            app:layout_constraintStart_toStartOf="@id/img_HandModule"
+            app:layout_constraintTop_toBottomOf="@+id/img_HandModule">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed"
+                android:textAlignment="center"
+                android:textSize="32dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="sans-serif-light"
+                android:textSize="16sp"
+                android:textStyle="italic"
+                app:layout_constraintEnd_toEndOf="@id/textView"
+                app:layout_constraintStart_toStartOf="@+id/textView"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <ImageButton
             android:id="@+id/btn_NextModule"
@@ -54,8 +68,8 @@
             android:backgroundTint="#FFFFFF"
             android:src="@drawable/ic_baseline_navigate_next"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/textView2"
-            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            app:layout_constraintEnd_toEndOf="@+id/txtModuleLearn"
+            app:layout_constraintTop_toBottomOf="@+id/txtModuleLearn"
             app:layout_constraintVertical_bias="1.0" />
 
         <ImageButton
@@ -68,8 +82,8 @@
             android:contentDescription="Before"
             android:src="@drawable/ic_baseline_navigate_before"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/textView2"
-            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            app:layout_constraintStart_toStartOf="@+id/txtModuleLearn"
+            app:layout_constraintTop_toBottomOf="@+id/txtModuleLearn"
             app:layout_constraintVertical_bias="1.0" />
 
         <Button
@@ -80,9 +94,9 @@
             android:layout_marginBottom="24dp"
             android:text="Start Quiz"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/textView2"
-            app:layout_constraintStart_toStartOf="@+id/textView2"
-            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            app:layout_constraintEnd_toEndOf="@+id/txtModuleLearn"
+            app:layout_constraintStart_toStartOf="@+id/txtModuleLearn"
+            app:layout_constraintTop_toBottomOf="@+id/txtModuleLearn"
             app:layout_constraintVertical_bias="1.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
