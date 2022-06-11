@@ -2,27 +2,22 @@ package com.C22PS320.Akrab.ui.modulquiz
 
 import android.Manifest
 import android.content.Context
-import android.content.Intent
 import android.content.pm.PackageManager
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import androidx.activity.result.ActivityResultLauncher
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import androidx.core.view.isVisible
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
-import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import com.C22PS320.Akrab.R
 import com.C22PS320.Akrab.databinding.ActivityModulQuizBinding
 import com.C22PS320.Akrab.preferences.SettingPreferences
 import com.C22PS320.Akrab.preferences.ViewModelFactory
-import com.C22PS320.Akrab.ui.camera.CameraActivity
 import com.C22PS320.Akrab.ui.modulquiz.learnmodule.ModuleLearnFragment
 import com.C22PS320.Akrab.ui.modulquiz.learnquiz.QuizLearnFragment
 import kotlinx.coroutines.launch
@@ -84,7 +79,7 @@ class ModulQuizActivity : AppCompatActivity() {
                 val mBundle = Bundle()
                 mBundle.putParcelable(ModuleLearnFragment.DATAMODULEQUIZ, it)
                 mBundle.putInt(ModuleLearnFragment.PIVOT, INIT)
-                it.data?.modul?.let { it1 -> mBundle.putInt(ModuleLearnFragment.MAX, it1?.size) }
+                it.data?.modul?.let { it1 -> mBundle.putInt(ModuleLearnFragment.MAX, it1.size) }
                 mHomeFragment.arguments = mBundle
                     mFragmentManager
                         .beginTransaction()
@@ -107,7 +102,7 @@ class ModulQuizActivity : AppCompatActivity() {
     }
     companion object{
         private var level = "level"
-        private val INIT = 0
+        private const val INIT = 0
         private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
 
         private val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.CAMERA)

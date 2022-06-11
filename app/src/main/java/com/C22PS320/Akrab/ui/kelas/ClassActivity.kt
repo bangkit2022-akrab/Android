@@ -2,17 +2,15 @@ package com.C22PS320.Akrab.ui.kelas
 
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.C22PS320.Akrab.adapter.LevelAdapter
 import com.C22PS320.Akrab.databinding.ActivityClassBinding
 import com.C22PS320.Akrab.network.response.LevelResponse

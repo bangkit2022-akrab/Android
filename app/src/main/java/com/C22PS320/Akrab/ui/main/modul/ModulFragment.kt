@@ -8,10 +8,8 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
 import com.C22PS320.Akrab.R
 import com.C22PS320.Akrab.adapter.ModuleAdapter
@@ -23,19 +21,28 @@ import com.bumptech.glide.Glide
 class ModulFragment : Fragment() {
     private var _binding: FragmentModulBinding? = null
     private val binding get() = _binding!!
+    private val randomText: Array<String> = arrayOf("Study is easy and fun right?",
+        "Arkana, Ayu, Fian, Iskan, Randy, and Anggra is my Creator",
+        "Uhmm.. do you like eating lizard?",
+        "I prefer worm, worm is good",
+        "How's your day?",
+        "Akrab is made with full of love",
+        "Sometimes im feel lonely",
+        "Do you know how to make sign for Z?",
+        "Ah~~ bangkit program aye",
+        "Can you stop touching me")
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentModulBinding.inflate(inflater, container, false)
-        val view = binding.root
-        return view
+        return binding.root
     }
 
     companion object {
-        val TOKEN: String = "TOKEN"
+        const val TOKEN: String = "TOKEN"
         @JvmStatic
         fun newInstance() =
             ModulFragment().apply {
@@ -53,9 +60,13 @@ class ModulFragment : Fragment() {
             binding.progressBar.visibility = View.VISIBLE
         }else {
             binding.progressBar.visibility = View.GONE
+            binding.textView5.text = randomText[(randomText.indices).random()]
             val layoutManager = GridLayoutManager(view?.context, 4)
             binding.rvModule.layoutManager = layoutManager
             setModuleData(data.data)
+            binding.imageView7.setOnClickListener {
+                binding.textView5.text = randomText[(randomText.indices).random()]
+            }
         }
     }
     private fun setModuleData(UsersData: List<DataItemModule?>?) {
@@ -68,7 +79,7 @@ class ModulFragment : Fragment() {
         })
     }
     private fun startDialog(data: DataItemModule){
-        var dialogView =  layoutInflater.inflate(R.layout.module_layout_dialog, null)
+        val dialogView =  layoutInflater.inflate(R.layout.module_layout_dialog, null)
         val customDialog = AlertDialog.Builder(view?.context ?: requireContext())
             .setView(dialogView)
             .show()

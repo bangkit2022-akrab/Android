@@ -6,19 +6,21 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.ImageButton
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.C22PS320.Akrab.R
-import com.C22PS320.Akrab.databinding.FragmentHomeBinding
 import com.C22PS320.Akrab.databinding.FragmentProfileBinding
 import com.C22PS320.Akrab.preferences.SettingPreferences
 import com.C22PS320.Akrab.preferences.ViewModelFactory
-import com.C22PS320.Akrab.ui.kelas.ClassActivity
 import com.C22PS320.Akrab.ui.login.LoginActivity
-import com.C22PS320.Akrab.ui.main.MainActivity
 import com.C22PS320.Akrab.ui.main.MainActivity.Companion.dataStore
 import com.C22PS320.Akrab.ui.main.MainViewModel
-import com.C22PS320.Akrab.ui.main.home.HomeFragment
+import com.bumptech.glide.Glide
 
 class ProfileFragment : Fragment() {
     private var _binding: FragmentProfileBinding? = null
@@ -30,8 +32,7 @@ class ProfileFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
-        val view = binding.root
-        return view
+        return binding.root
     }
     override fun onDestroyView() {
         super.onDestroyView()
@@ -54,12 +55,46 @@ class ProfileFragment : Fragment() {
         (activity as AppCompatActivity).supportActionBar?.hide()
         if(arguments!= null) {
             binding.tvUsername.text = arguments?.getString(EXTRA_NAME)
-            binding.TvEmail.text = arguments?.getString(EXTRA_EMAIL)
+            binding.tvEmail.text = arguments?.getString(EXTRA_EMAIL)
         }
         val mainViewModel = ViewModelProvider(this, ViewModelFactory(SettingPreferences.getInstance(
             (activity as AppCompatActivity).dataStore),requireActivity())).get(
             MainViewModel::class.java
         )
+        binding.btnTerms?.setOnClickListener {
+            val dialogView: View = layoutInflater.inflate(R.layout.module_layout_dialog, null)
+            val customDialog = AlertDialog.Builder(view?.context ?: requireContext())
+                .setView(dialogView)
+                .show()
+            val btDismiss = dialogView.findViewById<ImageButton>(R.id.imageButton)
+            val txtExplain = dialogView.findViewById<TextView>(R.id.textView2)
+            val img = dialogView.findViewById<ImageView>(R.id.img_Module)
+            Glide.with(requireContext())
+                .load(R.drawable.akrab)
+                .into(img)
+            txtExplain.text = getText(R.string.term2)
+            btDismiss.setOnClickListener {
+                customDialog.cancel()
+                customDialog.dismiss()
+            }
+        }
+        binding.btnAbout?.setOnClickListener {
+            val dialogView: View = layoutInflater.inflate(R.layout.module_layout_dialog, null)
+            val customDialog = AlertDialog.Builder(view?.context ?: requireContext())
+                .setView(dialogView)
+                .show()
+            val btDismiss = dialogView.findViewById<ImageButton>(R.id.imageButton)
+            val txtExplain = dialogView.findViewById<TextView>(R.id.textView2)
+            val img = dialogView.findViewById<ImageView>(R.id.img_Module)
+            Glide.with(requireContext())
+                .load(R.drawable.akrabxbangkit)
+                .into(img)
+            txtExplain.text = getText(R.string.about)
+            btDismiss.setOnClickListener {
+                customDialog.cancel()
+                customDialog.dismiss()
+            }
+        }
         binding.btnLogout.setOnClickListener {
             mainViewModel.deleteAllDatas()
             val i = Intent(requireContext(), LoginActivity::class.java)

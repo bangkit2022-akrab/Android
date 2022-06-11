@@ -21,7 +21,8 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/header2" />
+            app:srcCompat="@drawable/header2"
+            android:contentDescription="@string/app_name" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout"
@@ -68,17 +69,16 @@
 
         <Button
             android:id="@+id/btnLogout"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:background="@drawable/red"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/customborder"
             android:elevation="3dp"
-            android:text="Logout"
-            android:textColor="#ffffff"
-
+            android:text="@string/logout"
             android:textSize="18sp"
-            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
-            tools:layout_editor_absoluteX="-16dp" />
+            app:layout_constraintEnd_toEndOf="@+id/btn_About"
+            app:layout_constraintStart_toStartOf="@+id/btn_About" />
 
         <ImageView
             android:id="@+id/imageView8"
@@ -87,7 +87,8 @@
             android:layout_marginTop="16dp"
             android:src="@drawable/maskot"
             app:layout_constraintStart_toStartOf="@+id/constraintLayout"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+            android:contentDescription="@string/app_name" />
 
         <TextView
             android:id="@+id/textView6"
@@ -96,11 +97,49 @@
             android:layout_marginStart="16dp"
             android:background="@drawable/customborder"
             android:justificationMode="inter_word"
-            android:text="Akrab is an application that offers convenience for peoples who are deaf and mute as well as for the public to learn sign language."
+            android:text="@string/about_akrab"
             app:layout_constraintBottom_toBottomOf="@+id/imageView8"
             app:layout_constraintEnd_toEndOf="@+id/constraintLayout"
             app:layout_constraintStart_toEndOf="@+id/imageView8"
             app:layout_constraintTop_toBottomOf="@+id/imageView9" />
+
+        <ImageView
+            android:id="@+id/imageView11"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/customborder"
+            android:src="@drawable/akrabxbangkit"
+            app:layout_constraintEnd_toEndOf="@+id/textView6"
+            app:layout_constraintStart_toStartOf="@+id/imageView8"
+            app:layout_constraintTop_toBottomOf="@+id/textView6"
+            app:srcCompat="@drawable/akrabxbangkit"
+            android:contentDescription="@string/app_name" />
+
+        <Button
+            android:id="@+id/btn_Terms"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/customborder"
+            android:text="@string/terms_conditions"
+            app:layout_constraintBottom_toTopOf="@+id/btnLogout"
+            app:layout_constraintEnd_toEndOf="@+id/imageView11"
+            app:layout_constraintStart_toStartOf="@+id/imageView11"
+            app:layout_constraintTop_toBottomOf="@+id/imageView11"
+            app:layout_constraintVertical_bias="0.36" />
+
+        <Button
+            android:id="@+id/btn_About"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/customborder"
+            android:text="@string/about_apps"
+            app:layout_constraintEnd_toEndOf="@+id/btn_Terms"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/btn_Terms"
+            app:layout_constraintTop_toBottomOf="@+id/btn_Terms" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -31,7 +31,7 @@ class LevelAdapter(private val listUser: List<DataItem?>?) : RecyclerView.Adapte
             .load("${listUser?.get(position)?.imageLevel}")
             .transform(CenterInside(), RoundedCorners(35))
             .into(viewHolder.imgItemPhoto)
-        viewHolder.itemView.setOnClickListener { listUser?.get(viewHolder.adapterPosition)
+        viewHolder.itemView.setOnClickListener { listUser?.get(viewHolder.bindingAdapterPosition)
             ?.let { it1 ->
             onItemClickCallback.onItemClicked(
                 it1.level.toString()

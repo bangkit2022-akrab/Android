@@ -13,7 +13,7 @@ import com.C22PS320.Akrab.ui.splashscreen.SplashScreenViewModel
 class ViewModelFactory(private val pref: SettingPreferences,private val context: Context) : ViewModelProvider.NewInstanceFactory() {
 
     @Suppress("UNCHECKED_CAST")
-    override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+    override fun <T : ViewModel> create(modelClass: Class<T>): T {
         return when {
             modelClass.isAssignableFrom(MainViewModel::class.java) -> {
                 MainViewModel(pref) as T

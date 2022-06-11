@@ -25,7 +25,7 @@ class ModuleAdapter(private val listUser: List<DataItemModule?>?) : RecyclerView
             .load("${listUser?.get(position)?.image}")
             .into(viewHolder.imgItemPhoto)
         viewHolder.txtItem.text = listUser?.get(position)?.materi
-        viewHolder.itemView.setOnClickListener { listUser?.get(viewHolder.adapterPosition)
+        viewHolder.itemView.setOnClickListener { listUser?.get(viewHolder.bindingAdapterPosition)
             ?.let { it1 ->
                 onItemClickCallback.onItemClicked(
                     it1

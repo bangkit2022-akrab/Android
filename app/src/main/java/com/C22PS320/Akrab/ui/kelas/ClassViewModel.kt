@@ -5,7 +5,6 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.asLiveData
 import com.C22PS320.Akrab.network.ApiConfig
 import com.C22PS320.Akrab.network.response.LevelResponse
 import com.C22PS320.Akrab.preferences.SettingPreferences

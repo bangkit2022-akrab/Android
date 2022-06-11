@@ -20,21 +20,19 @@ class ModuleLearnFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentModuleLearnBinding.inflate(inflater, container, false)
-        val view = binding.root
-        return view
+        return binding.root
     }
     companion object {
-        val DATAMODULEQUIZ: String = "data"
-        val PIVOT: String = "prev"
-        val MAX: String = "next"
+        const val DATAMODULEQUIZ: String = "data"
+        const val PIVOT: String = "prev"
+        const val MAX: String = "next"
 
         @JvmStatic
         fun newInstance() =
             ModuleLearnFragment().apply {
                 arguments = Bundle().apply {
-//                    binding.tvUsername.text = this.getString("name")
                 }
             }
     }

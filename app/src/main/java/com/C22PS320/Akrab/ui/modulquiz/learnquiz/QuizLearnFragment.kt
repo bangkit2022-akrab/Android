@@ -79,7 +79,7 @@ class QuizLearnFragment : Fragment() {
                         model.close()
                         val output = outputFeature0.floatArray
                         val resultAi =
-                            output.let { it1 -> getClassificationResult(it1, hurufLableList) }
+                            getClassificationResult(output, hurufLableList)
 
                         if (resultAi == now?.jawaban) {
                             if (pvt != mx) {
@@ -110,7 +110,7 @@ class QuizLearnFragment : Fragment() {
                         model.close()
                         val output = outputFeature0.floatArray
                         val resultAi =
-                            output.let { it1 -> getClassificationResult(it1, angkaLableList) }
+                            getClassificationResult(output, angkaLableList)
 
                         if (resultAi == now?.jawaban) {
                             if (pvt != mx) {
@@ -184,7 +184,7 @@ class QuizLearnFragment : Fragment() {
         var maxPos = 0
         var maxConfidence = 0.0f
 
-        for (i in 0 until arr.size){
+        for (i in arr.indices){
             if (arr[i]> maxConfidence){
                 maxConfidence = arr[i]
                 maxPos = i
