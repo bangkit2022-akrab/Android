@@ -41,7 +41,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-condensed"
                 android:textAlignment="center"
-                android:textSize="32dp"
+                android:textSize="28dp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -51,9 +51,9 @@
                 android:id="@+id/textView2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="14dp"
                 android:fontFamily="sans-serif-light"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 android:textStyle="italic"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@id/textView"
@@ -103,12 +103,13 @@
 
         <ImageView
             android:id="@+id/imageView5"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="88dp"
+            android:layout_height="84dp"
             android:src="@drawable/maskot"
             app:layout_constraintBottom_toTopOf="@+id/btn_beforeModule"
             app:layout_constraintStart_toStartOf="@+id/img_HandModule"
-            app:layout_constraintTop_toTopOf="@+id/txtModuleLearn" />
+            app:layout_constraintTop_toTopOf="@+id/txtModuleLearn"
+            app:layout_constraintVertical_bias="0.207" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
