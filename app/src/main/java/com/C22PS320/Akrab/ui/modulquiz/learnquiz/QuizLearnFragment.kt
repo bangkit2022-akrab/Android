@@ -15,6 +15,7 @@ import androidx.appcompat.app.AlertDialog
 import com.C22PS320.Akrab.R
 import com.C22PS320.Akrab.databinding.FragmentQuizLearnBinding
 import com.C22PS320.Akrab.ml.AlphabetModel
+import com.C22PS320.Akrab.ml.DigitModel
 import com.C22PS320.Akrab.network.response.ModuleQuizResponse
 import com.C22PS320.Akrab.preferences.rotateBitmap
 import com.C22PS320.Akrab.ui.camera.CameraActivity
@@ -31,6 +32,7 @@ class QuizLearnFragment : Fragment() {
     private val hurufLableList: Array<String> =  arrayOf("A","B","C","D","E","F","G","H","I","K",
         "L","M","N","O","P","Q","R","S",
         "T","U","V","W","X","Y")
+    private val angkaLableList: Array<String> = arrayOf("0","1","2","3","4","5","6","7","8","9")
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -60,32 +62,70 @@ class QuizLearnFragment : Fragment() {
                 val scaledBitmap = Bitmap.createScaledBitmap(result, INPUT_SIZE, INPUT_SIZE, false)
                 binding.imageView2.setImageBitmap(result)
                 val resized = convertBitmapToByteBuffer(scaledBitmap)
+                when (data?.data?.tipe) {
+                    "letter" -> {
+                        val model = AlphabetModel.newInstance(requireContext())
 
-                val model = AlphabetModel.newInstance(requireContext())
+                        val inputFeature0 =
+                            TensorBuffer.createFixedSize(
+                                intArrayOf(1, 150, 150, 3),
+                                DataType.FLOAT32
+                            )
+                        inputFeature0.loadBuffer(resized)
 
-                val inputFeature0 =
-                    TensorBuffer.createFixedSize(intArrayOf(1, 150, 150, 3), DataType.FLOAT32)
-                inputFeature0.loadBuffer(resized)
+                        val outputs = model.process(inputFeature0)
+                        val outputFeature0 = outputs.outputFeature0AsTensorBuffer
 
-                val outputs = model.process(inputFeature0)
-                val outputFeature0 = outputs.outputFeature0AsTensorBuffer
+                        model.close()
+                        val output = outputFeature0.floatArray
+                        val resultAi =
+                            output.let { it1 -> getClassificationResult(it1, hurufLableList) }
 
-                model.close()
-                val output = outputFeature0.floatArray
-                val resultAi = output.let { it1 -> getClassificationResult(it1, hurufLableList) }
+                        if (resultAi == now?.jawaban) {
+                            if (pvt != mx) {
+                                startDialog(true)
+                                binding.btnNextQuiz.visibility = View.VISIBLE
+                            } else {
+                                binding.btnNextQuiz.visibility = View.GONE
+                                endQuiz()
+                            }
+                        } else {
+                            startDialog(false)
+                        }
 
-                if (resultAi == now?.jawaban) {
-                    if (pvt != mx) {
-                        startDialog(true)
-                        binding.btnNextQuiz.visibility = View.VISIBLE
-                    } else {
-                        binding.btnNextQuiz.visibility = View.GONE
-                        endQuiz()
                     }
-                } else {
-                    startDialog(false)
-                }
+                    "number" -> {
+                        val model = DigitModel.newInstance(requireContext())
 
+                        val inputFeature0 =
+                            TensorBuffer.createFixedSize(
+                                intArrayOf(1, 150, 150, 3),
+                                DataType.FLOAT32
+                            )
+                        inputFeature0.loadBuffer(resized)
+
+                        val outputs = model.process(inputFeature0)
+                        val outputFeature0 = outputs.outputFeature0AsTensorBuffer
+
+                        model.close()
+                        val output = outputFeature0.floatArray
+                        val resultAi =
+                            output.let { it1 -> getClassificationResult(it1, angkaLableList) }
+
+                        if (resultAi == now?.jawaban) {
+                            if (pvt != mx) {
+                                startDialog(true)
+                                binding.btnNextQuiz.visibility = View.VISIBLE
+                            } else {
+                                binding.btnNextQuiz.visibility = View.GONE
+                                endQuiz()
+                            }
+                        } else {
+                            startDialog(false)
+                        }
+
+                    }
+                }
             }
         }
 

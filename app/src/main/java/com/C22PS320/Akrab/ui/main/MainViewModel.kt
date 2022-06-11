@@ -28,7 +28,7 @@ class MainViewModel(private val pref: SettingPreferences): ViewModel() {
     fun getUserName(): LiveData<String?> {
         return pref.getUserName().asLiveData()
     }
-    fun getUserData(): LiveData<String?> {
+    fun getUserEmail(): LiveData<String?> {
         return pref.getEmail().asLiveData()
     }
     fun deleteAllDatas() {

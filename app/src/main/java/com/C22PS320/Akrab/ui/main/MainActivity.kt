@@ -72,7 +72,7 @@ class MainActivity : AppCompatActivity() {
                         val fragment = ProfileFragment.newInstance()
                         val mBundle = Bundle()
                     mainViewModel.getUserName().observe(this) { name ->
-                        mainViewModel.getUserData().observe(this) {email ->
+                        mainViewModel.getUserEmail().observe(this) { email ->
                             mBundle.putString(ProfileFragment.EXTRA_NAME, name)
                             mBundle.putString(
                                 ProfileFragment.EXTRA_EMAIL,
@@ -94,6 +94,7 @@ class MainActivity : AppCompatActivity() {
     override fun onBackPressed() {
         super.onBackPressed()
         finish()
+        binding.bottomNavigation
     }
     private fun showLoading(isLoading: Boolean) {
         binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE

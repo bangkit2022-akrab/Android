@@ -35,7 +35,7 @@ class ModulFragment : Fragment() {
     }
 
     companion object {
-        val TOKEN: String? = "TOKEN"
+        val TOKEN: String = "TOKEN"
         @JvmStatic
         fun newInstance() =
             ModulFragment().apply {
