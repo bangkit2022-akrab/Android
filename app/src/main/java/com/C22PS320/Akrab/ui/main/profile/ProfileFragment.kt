@@ -28,7 +28,7 @@ class ProfileFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
         val view = binding.root
         return view
@@ -40,8 +40,8 @@ class ProfileFragment : Fragment() {
 
 
     companion object {
-        val EXTRA_NAME: String? = "NAME"
-        val EXTRA_EMAIL: String? = "MAIL"
+        val EXTRA_NAME: String = "NAME"
+        val EXTRA_EMAIL: String = "MAIL"
         @JvmStatic
         fun newInstance() =
             ProfileFragment().apply {
@@ -66,8 +66,6 @@ class ProfileFragment : Fragment() {
             i.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(i)
         }
-//        (activity as AppCompatActivity).supportActionBar?.show()
-//        (activity as AppCompatActivity).supportActionBar?.title = "Profile"
 
     }
 }

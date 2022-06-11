@@ -28,7 +28,7 @@ class ClassActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         val kelas = intent.getStringExtra(KELAS)
-        supportActionBar?.title = "KELAS ${kelas?.uppercase()}"
+        supportActionBar?.hide()
         val pref = SettingPreferences.getInstance(dataStore)
         val classViewModel = ViewModelProvider(this, ViewModelFactory(pref,this)).get(
             ClassViewModel::class.java

@@ -29,11 +29,6 @@ class ModulFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-       val callback = object : OnBackPressedCallback(true){
-           override fun handleOnBackPressed() {
-
-           }
-       }
         _binding = FragmentModulBinding.inflate(inflater, container, false)
         val view = binding.root
         return view
@@ -60,9 +55,7 @@ class ModulFragment : Fragment() {
             binding.progressBar.visibility = View.GONE
             val layoutManager = GridLayoutManager(view?.context, 4)
             binding.rvModule.layoutManager = layoutManager
-//            val itemDecoration = DividerItemDecoration(view?.context, layoutManager.orientation)
-//            binding.rvModule.addItemDecoration(itemDecoration)
-            setModuleData(data?.data)
+            setModuleData(data.data)
         }
     }
     private fun setModuleData(UsersData: List<DataItemModule?>?) {

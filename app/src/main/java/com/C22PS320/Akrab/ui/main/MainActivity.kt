@@ -3,7 +3,7 @@ package com.C22PS320.Akrab.ui.main
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
+import android.view.View
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
@@ -16,7 +16,6 @@ import com.C22PS320.Akrab.preferences.SettingPreferences
 import com.C22PS320.Akrab.preferences.ViewModelFactory
 import com.C22PS320.Akrab.ui.main.home.HomeFragment
 import com.C22PS320.Akrab.ui.main.modul.ModulFragment
-import com.C22PS320.Akrab.ui.main.news.NewsFragment
 import com.C22PS320.Akrab.ui.main.profile.ProfileFragment
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation
 import kotlinx.coroutines.launch
@@ -43,10 +42,12 @@ class MainActivity : AppCompatActivity() {
                 fragment.arguments = mBundle
                 replaceFragment(fragment)
         }
+        mainViewModel.isLoading.observe(this) {
+            showLoading(it)
+        }
         binding.bottomNavigation.show(0)
         binding.bottomNavigation.add(MeowBottomNavigation.Model(0, R.drawable.ic_baseline_home))
         binding.bottomNavigation.add(MeowBottomNavigation.Model(1, R.drawable.ic_baseline_library_books_24))
-//        binding.bottomNavigation.add(MeowBottomNavigation.Model(2, R.drawable.ic_baseline_subject_24))
         binding.bottomNavigation.add(MeowBottomNavigation.Model(2, R.drawable.ic_baseline_account_circle))
 
         binding.bottomNavigation.setOnClickMenuListener {
@@ -94,6 +95,10 @@ class MainActivity : AppCompatActivity() {
         super.onBackPressed()
         finish()
     }
+    private fun showLoading(isLoading: Boolean) {
+        binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
+    }
+
     private fun replaceFragment(fragment: Fragment){
 
         val fragmentTransition = supportFragmentManager.beginTransaction()

@@ -10,7 +10,7 @@
         android:id="@+id/rvUsers"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="24dp"
         android:overScrollMode="never"
         android:scrollbarSize="0dp"
         app:layout_constraintBottom_toBottomOf="parent"

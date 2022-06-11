@@ -18,7 +18,7 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val view = binding.root
         return view
@@ -29,13 +29,12 @@ class HomeFragment : Fragment() {
     }
 
     companion object {
-        val EXTRA_NAME: String? = "NAME"
+        val EXTRA_NAME: String = "NAME"
 
         @JvmStatic
         fun newInstance() =
             HomeFragment().apply {
                 arguments = Bundle().apply {
-//                    binding.tvUsername.text = this.getString("name")
                 }
             }
     }
