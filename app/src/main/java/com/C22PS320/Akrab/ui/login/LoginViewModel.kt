@@ -43,7 +43,7 @@ class LoginViewModel(private val pref: SettingPreferences): ViewModel() {
                     _login.value = response.body()
                     _snackbarText.value = Event(response.body()?.meta?.message.toString())
                 } else {
-                    _snackbarText.value = Event(response.message())
+                    _snackbarText.value = Event(response.body()?.meta?.message.toString())
                     Log.e(ContentValues.TAG, "onFailure but response: ${response.message()}")
                 }
             }

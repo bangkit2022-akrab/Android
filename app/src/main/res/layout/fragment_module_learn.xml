@@ -15,7 +15,6 @@
             android:layout_width="0dp"
             android:layout_height="450dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:background="@drawable/customborder"
             android:src="@drawable/akrab"
@@ -28,15 +27,16 @@
             android:id="@+id/txtModuleLearn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:background="@drawable/customborder"
-            app:layout_constraintEnd_toEndOf="@id/img_HandModule"
-            app:layout_constraintStart_toStartOf="@id/img_HandModule"
+            app:layout_constraintEnd_toEndOf="@+id/img_HandModule"
+            app:layout_constraintStart_toEndOf="@+id/imageView5"
             app:layout_constraintTop_toBottomOf="@+id/img_HandModule">
 
             <TextView
                 android:id="@+id/textView"
-                android:layout_width="350dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-condensed"
                 android:textAlignment="center"
@@ -54,6 +54,7 @@
                 android:fontFamily="sans-serif-light"
                 android:textSize="16sp"
                 android:textStyle="italic"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@id/textView"
                 app:layout_constraintStart_toStartOf="@+id/textView"
                 app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -68,7 +69,7 @@
             android:backgroundTint="#FFFFFF"
             android:src="@drawable/ic_baseline_navigate_next"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/txtModuleLearn"
+            app:layout_constraintEnd_toEndOf="@+id/img_HandModule"
             app:layout_constraintTop_toBottomOf="@+id/txtModuleLearn"
             app:layout_constraintVertical_bias="1.0" />
 
@@ -82,7 +83,7 @@
             android:contentDescription="Before"
             android:src="@drawable/ic_baseline_navigate_before"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/txtModuleLearn"
+            app:layout_constraintStart_toStartOf="@+id/img_HandModule"
             app:layout_constraintTop_toBottomOf="@+id/txtModuleLearn"
             app:layout_constraintVertical_bias="1.0" />
 
@@ -94,10 +95,19 @@
             android:layout_marginBottom="24dp"
             android:text="Start Quiz"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/txtModuleLearn"
-            app:layout_constraintStart_toStartOf="@+id/txtModuleLearn"
+            app:layout_constraintEnd_toEndOf="@+id/img_HandModule"
+            app:layout_constraintStart_toStartOf="@+id/img_HandModule"
             app:layout_constraintTop_toBottomOf="@+id/txtModuleLearn"
             app:layout_constraintVertical_bias="1.0" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/maskot"
+            app:layout_constraintBottom_toTopOf="@+id/btn_beforeModule"
+            app:layout_constraintStart_toStartOf="@+id/img_HandModule"
+            app:layout_constraintTop_toTopOf="@+id/txtModuleLearn" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
