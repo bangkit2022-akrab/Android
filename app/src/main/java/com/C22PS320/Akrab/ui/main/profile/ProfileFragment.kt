@@ -57,7 +57,7 @@ class ProfileFragment : Fragment() {
             binding.tvEmail.text = arguments?.getString(EXTRA_EMAIL)
         }
         val mainViewModel = ViewModelProvider(this, ViewModelFactory(SettingPreferences.getInstance(
-            (activity as AppCompatActivity).dataStore),requireActivity())).get(
+            (activity as AppCompatActivity).dataStore))).get(
             MainViewModel::class.java
         )
         binding.btnTerms?.setOnClickListener {
