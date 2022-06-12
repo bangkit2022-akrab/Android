@@ -120,26 +120,24 @@
             android:id="@+id/btn_Terms"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
             android:background="@drawable/customborder"
             android:text="@string/terms_conditions"
-            app:layout_constraintBottom_toTopOf="@+id/btnLogout"
+            app:layout_constraintBottom_toTopOf="@+id/btn_About"
             app:layout_constraintEnd_toEndOf="@+id/imageView11"
-            app:layout_constraintStart_toStartOf="@+id/imageView11"
-            app:layout_constraintTop_toBottomOf="@+id/imageView11"
-            app:layout_constraintVertical_bias="0.36" />
+            app:layout_constraintStart_toStartOf="@+id/imageView11" />
 
         <Button
             android:id="@+id/btn_About"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
             android:background="@drawable/customborder"
             android:text="@string/about_apps"
+            app:layout_constraintBottom_toTopOf="@+id/btnLogout"
             app:layout_constraintEnd_toEndOf="@+id/btn_Terms"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/btn_Terms"
-            app:layout_constraintTop_toBottomOf="@+id/btn_Terms" />
+            app:layout_constraintStart_toStartOf="@+id/btn_Terms" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

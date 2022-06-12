@@ -17,18 +17,17 @@
     <string name="upload">Upload</string>
     <string name="description">Description</string>
     <string name="title_activity_detail">DetailActivity</string>
-    <string name="not_permitted">Didnt get permission</string>
+    <string name="not_permitted">Didn\'t get permission</string>
     <string name="choose_pic">Choose Picture</string>
     <string name="enter_image_first">Please input file first</string>
     <string name="cant_open_camera">Failed launched camera</string>
     <string name="cant_capture">Failed capture image</string>
-    <string name="field_cant_empty">field cant be null</string>
+    <string name="field_cant_empty">field can\'t be null</string>
     <string name="invalid_email">Email Invalid!</string>
     <string name="six_chara_password">Password must more than 6 character!</string>
     <string name="create_your_account">Create Your Account</string>
     <string name="login_to_your_account">Login to your Account</string>
     <string name="hello">Hi,</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="choose">Category Letter</string>
     <string name="choosenumber">Category Number</string>
     <string name="have_a_nice_day">Have a Nice day!</string>
@@ -38,5 +37,10 @@
     <string name="about_akrab">Akrab is an application that offers convenience for peoples who are deaf and mute as well as for the public to learn sign language.</string>
     <string name="about_apps">About Apps</string>
     <string name="about">we present to you, our project, Akrab. Akrab is an android-based learning application that is intended for people who are deaf and mute, as a media for people with disabilities as well as for the general public who care about the importance of sign language to learn. This application offers an experience of how to communicate using sign language with machine learning-based interactive lessons whenever and wherever the user wants to learn. Users can practice the sign language they’ve learned through some exercises to measure their understanding.</string>
-    <string name="term2">KETENTUAN UMUM PENGGUNAAN APLIKASI Saat mengunjungi dan menggunakan situs ini, termasuk setiap fitur dan layanannya, Setiap Pengguna wajib untuk mematuhi ketentuan Pengguna Situs berikut ini: Pengguna tidak ada batas minimum untuk umur, Setiap Pengguna sepakat untuk tidak menyalin, menggunakan atau mengunduh semua informasi, tulisan, gambar, rekaman video, direktori, dokumen, database atau iklan yang ada di aplikasi Akrab atau yang diperoleh melalui aplikasi Akrab dengan tujuan apapun termasuk dan tidak terbatas pada di antaranya menjual kembali atau menyebarkan kembali isi aplikasi Akrab, melakukan pemasaran massal (lewat email, SMS, surat biasa atau lainnya), menjalankan usaha untuk menyaingi aplikasi Akrab atau memanfaatkan situs aplikasi Akrab untuk keperluan komersial di luar kegiatan transaksi dengan aplikasi Akrab. Pengguna tidak diperbolehkan mengambil isi aplikasi Akrab secara sistematis untuk membuat atau menyusun, baik secara langsung maupun tidak langsung, koleksi, kompilasi, database atau direktori (baik menggunakan perangkat otomatis ataupun proses manual) tanpa izin tertulis dari Kami. Selain itu Pengguna tidak diperkenankan menggunakan isi atau bahan tersebut di atas untuk tujuan apa pun yang tidak disebutkan di dalam Perjanjian ini.</string>
+    <string name="term2">GENERAL CONDITIONS OF USE OF THE APPLICATION When visiting and using this site, including each of its features and services, each user is required to comply with the following site user requirements: there is no minimum age limit for users, each user agrees not to copy, use or download all information, writings , images, video recordings, directories, documents, databases or advertisements contained in the Familiar application or obtained through the Familiar application for any purpose including but not limited to reselling or redistributing the contents of the Familiar application, conducting mass marketing (via email, SMS, regular mail or other), running a business to compete with the Familiar application or utilizing the Familiar application site for commercial purposes outside of transaction activities with the Familiar application. Users are not allowed to take the contents of the Familiar application systematically to create or compile, either directly or indirectly, collections, compilations, databases or directories (either using automatic tools or manual processes) without our written permission. In addition, the User is not allowed to use the content or materials mentioned above for any purpose that is not stated in this Agreement</string>
+    <string name="back_to_class">Back To Class</string>
+    <string name="your_answer_is_incorrect">Your Answer is Incorrect</string>
+    <string name="you_haven_t_guessed_the_letter_correctly">You Haven\'t Guessed The Letter Correctly</string>
+    <string name="repeat">REPEAT</string>
+    <string name="start_quiz">Start Quiz</string>
 </resources>

@@ -1,10 +1,8 @@
 package com.C22PS320.Akrab.preferences
 
 import android.app.Application
-import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.Matrix
-import android.os.Environment
 import com.C22PS320.Akrab.R
 import java.io.File
 import java.text.SimpleDateFormat
@@ -16,11 +14,6 @@ val timeStamp: String = SimpleDateFormat(
     FILENAME_FORMAT,
     Locale.US
 ).format(System.currentTimeMillis())
-
-fun createTempFile(context: Context): File {
-    val storageDir: File? = context.getExternalFilesDir(Environment.DIRECTORY_PICTURES)
-    return File.createTempFile(timeStamp, ".jpg", storageDir)
-}
 
 fun createFile(application: Application): File {
     val mediaDir = application.externalMediaDirs.firstOrNull()?.let {

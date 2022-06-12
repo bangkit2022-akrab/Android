@@ -20,7 +20,7 @@ class CustomPasswordEditText: AppCompatEditText {
     }
 
     override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
-        if(s.length>0 && s.length<6){
+        if(s.length in 1..5){
             error = context.getString(R.string.six_chara_password)
         }
     }

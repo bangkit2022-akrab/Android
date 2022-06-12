@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val pref = SettingPreferences.getInstance(dataStore)
-        val mainViewModel = ViewModelProvider(this, ViewModelFactory(pref,this)).get(
+        val mainViewModel = ViewModelProvider(this, ViewModelFactory(pref)).get(
             MainViewModel::class.java
         )
         lifecycleScope.launch {
@@ -47,16 +47,16 @@ class MainActivity : AppCompatActivity() {
         }
         binding.bottomNavigation.show(0)
         binding.bottomNavigation.add(MeowBottomNavigation.Model(0, R.drawable.ic_baseline_home))
-        binding.bottomNavigation.add(MeowBottomNavigation.Model(1, R.drawable.ic_baseline_library_books_24))
+        binding.bottomNavigation.add(MeowBottomNavigation.Model(1, R.drawable.ic_baseline_menu_book))
         binding.bottomNavigation.add(MeowBottomNavigation.Model(2, R.drawable.ic_baseline_account_circle))
 
         binding.bottomNavigation.setOnClickMenuListener {
             when(it.id){
                 0 -> {
-                    mainViewModel.getUserName().observe(this) {
+                    mainViewModel.getUserName().observe(this) { it2 ->
                         val fragment = HomeFragment.newInstance()
                         val mBundle = Bundle()
-                        mBundle.putString(HomeFragment.EXTRA_NAME, it)
+                        mBundle.putString(HomeFragment.EXTRA_NAME, it2)
                         fragment.arguments = mBundle
                         replaceFragment(fragment)
                     }

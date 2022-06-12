@@ -45,7 +45,6 @@
             android:fontFamily="sans-serif-light"
             android:textSize="14sp"
             android:textStyle="italic"
-            android:justificationMode="inter_word"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/textView"
             app:layout_constraintStart_toStartOf="@+id/textView"

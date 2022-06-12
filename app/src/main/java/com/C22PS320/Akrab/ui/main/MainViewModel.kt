@@ -4,7 +4,6 @@ import android.content.ContentValues
 import android.util.Log
 import androidx.lifecycle.*
 import com.C22PS320.Akrab.network.ApiConfig
-import com.C22PS320.Akrab.network.response.LevelResponse
 import com.C22PS320.Akrab.network.response.ModuleResponse
 import com.C22PS320.Akrab.preferences.SettingPreferences
 import kotlinx.coroutines.launch

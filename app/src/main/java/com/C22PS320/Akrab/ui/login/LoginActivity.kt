@@ -28,7 +28,7 @@ class LoginActivity : AppCompatActivity() {
         supportActionBar?.hide()
 
         val pref = SettingPreferences.getInstance(dataStore)
-        val loginViewModel = ViewModelProvider(this, ViewModelFactory(pref,this)).get(
+        val loginViewModel = ViewModelProvider(this, ViewModelFactory(pref)).get(
             LoginViewModel::class.java
         )
 

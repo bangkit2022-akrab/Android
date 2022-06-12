@@ -25,7 +25,7 @@ class SplashScreenActivity : AppCompatActivity() {
         setContentView(binding.root)
         supportActionBar?.hide()
         val pref = SettingPreferences.getInstance(dataStore)
-        val splashScreenViewModel = ViewModelProvider(this, ViewModelFactory(pref,this)).get(
+        val splashScreenViewModel = ViewModelProvider(this, ViewModelFactory(pref)).get(
             SplashScreenViewModel::class.java
         )
         binding.progressBar.visibility = View.VISIBLE

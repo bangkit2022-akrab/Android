@@ -1,6 +1,5 @@
 package com.C22PS320.Akrab.preferences
 
-import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.C22PS320.Akrab.ui.kelas.ClassViewModel
@@ -10,7 +9,7 @@ import com.C22PS320.Akrab.ui.modulquiz.ModulQuizViewModel
 import com.C22PS320.Akrab.ui.register.RegisterViewModel
 import com.C22PS320.Akrab.ui.splashscreen.SplashScreenViewModel
 
-class ViewModelFactory(private val pref: SettingPreferences,private val context: Context) : ViewModelProvider.NewInstanceFactory() {
+class ViewModelFactory(private val pref: SettingPreferences) : ViewModelProvider.NewInstanceFactory() {
 
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel> create(modelClass: Class<T>): T {

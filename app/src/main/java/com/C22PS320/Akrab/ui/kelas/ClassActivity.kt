@@ -28,7 +28,7 @@ class ClassActivity : AppCompatActivity() {
         val kelas = intent.getStringExtra(KELAS)
         supportActionBar?.hide()
         val pref = SettingPreferences.getInstance(dataStore)
-        val classViewModel = ViewModelProvider(this, ViewModelFactory(pref,this)).get(
+        val classViewModel = ViewModelProvider(this, ViewModelFactory(pref)).get(
             ClassViewModel::class.java
         )
         lifecycleScope.launch {

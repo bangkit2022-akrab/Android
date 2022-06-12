@@ -22,7 +22,7 @@ class CustomEmailEditText:AppCompatEditText {
     }
 
     override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
-        if(s.length > 0){
+        if(s.isNotEmpty()){
             if (!isValidEmail(s)){
                 error = context.getString(R.string.invalid_email)
             }

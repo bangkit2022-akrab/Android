@@ -61,7 +61,7 @@ class ModulQuizActivity : AppCompatActivity() {
         }
         val level = intent.getStringExtra(level)
         val pref = SettingPreferences.getInstance(dataStore)
-        val modulQuizViewModel = ViewModelProvider(this, ViewModelFactory(pref,this)).get(
+        val modulQuizViewModel = ViewModelProvider(this, ViewModelFactory(pref)).get(
             ModulQuizViewModel::class.java
         )
 

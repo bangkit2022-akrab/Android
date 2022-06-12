@@ -28,7 +28,7 @@ class RegisterActivity : AppCompatActivity() {
         supportActionBar?.hide()
 
         val pref = SettingPreferences.getInstance(dataStore)
-        val registerViewModel = ViewModelProvider(this, ViewModelFactory(pref,this)).get(
+        val registerViewModel = ViewModelProvider(this, ViewModelFactory(pref)).get(
             RegisterViewModel::class.java
         )
 
