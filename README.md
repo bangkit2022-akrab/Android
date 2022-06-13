@@ -7,6 +7,7 @@
 
  <img src="images/AndroidTemplate-CleanArchitecture.png" alt="ArchiTecture logo"/>
 
+Akrab is an application that offers convenience for peoples who are deaf and mute as well as for the public to learn sign   language.
 ## Library
 - Retrofit for API
 - Tensorflow-lite for machine learning
